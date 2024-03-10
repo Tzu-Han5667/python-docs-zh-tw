@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>numbers --- 數值的抽象基底類別 &#8212; Python 3.12.1 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>numbers --- 數值的抽象基底類別 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=3221873d"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.1 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,23 +86,7 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numbers</span></code> --- 數值的抽象基底類別</a><ul>
-<li><a class="reference internal" href="#numbers.Number"><code class="docutils literal notranslate"><span class="pre">Number</span></code></a></li>
-<li><a class="reference internal" href="#the-numeric-tower">數值的階層</a><ul>
-<li><a class="reference internal" href="#numbers.Complex"><code class="docutils literal notranslate"><span class="pre">Complex</span></code></a><ul>
-<li><a class="reference internal" href="#numbers.Complex.real"><code class="docutils literal notranslate"><span class="pre">Complex.real</span></code></a></li>
-<li><a class="reference internal" href="#numbers.Complex.imag"><code class="docutils literal notranslate"><span class="pre">Complex.imag</span></code></a></li>
-<li><a class="reference internal" href="#numbers.Complex.conjugate"><code class="docutils literal notranslate"><span class="pre">Complex.conjugate()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#numbers.Real"><code class="docutils literal notranslate"><span class="pre">Real</span></code></a></li>
-<li><a class="reference internal" href="#numbers.Rational"><code class="docutils literal notranslate"><span class="pre">Rational</span></code></a><ul>
-<li><a class="reference internal" href="#numbers.Rational.numerator"><code class="docutils literal notranslate"><span class="pre">Rational.numerator</span></code></a></li>
-<li><a class="reference internal" href="#numbers.Rational.denominator"><code class="docutils literal notranslate"><span class="pre">Rational.denominator</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#numbers.Integral"><code class="docutils literal notranslate"><span class="pre">Integral</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#the-numeric-tower">數值的階層</a></li>
 <li><a class="reference internal" href="#notes-for-type-implementors">給型別實作者的註記</a><ul>
 <li><a class="reference internal" href="#adding-more-numeric-abcs">加入更多數值 ABC</a></li>
 <li><a class="reference internal" href="#implementing-the-arithmetic-operations">實作算術操作</a></li>
@@ -155,7 +139,7 @@
           <a href="numeric.html" title="數值與數學模組"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -165,7 +149,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -326,7 +310,12 @@
 <p><a class="reference internal" href="#numbers.Complex" title="numbers.Complex"><code class="xref py py-class docutils literal notranslate"><span class="pre">Complex</span></code></a> 的子類別有 5 種不同的混合型別操作。我將上面提到所有不涉及 <code class="docutils literal notranslate"><span class="pre">MyIntegral</span></code> 和 <code class="docutils literal notranslate"><span class="pre">OtherTypeIKnowAbout</span></code> 的程式碼稱作「模板 (boilerplate)」。<code class="docutils literal notranslate"><span class="pre">a</span></code> 是 <a class="reference internal" href="#numbers.Complex" title="numbers.Complex"><code class="xref py py-class docutils literal notranslate"><span class="pre">Complex</span></code></a> 之子型別 <code class="docutils literal notranslate"><span class="pre">A</span></code> 的實例 (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">:</span> <span class="pre">A</span> <span class="pre">&lt;:</span> <span class="pre">Complex</span></code>)，同時 <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">:</span> <span class="pre">B</span> <span class="pre">&lt;:</span> <span class="pre">Complex</span></code>。我將要計算 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>：</p>
 <ol class="arabic simple">
 <li><p>如果 <code class="docutils literal notranslate"><span class="pre">A</span></code> 有定義成一個接受 <code class="docutils literal notranslate"><span class="pre">b</span></code> 的 <a class="reference internal" href="../reference/datamodel.html#object.__add__" title="object.__add__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__add__()</span></code></a>，不會發生問題。</p></li>
-<li><p>如果 <code class="docutils literal notranslate"><span class="pre">A</span></code> 回退成模板程式碼，它將回傳一個來自 <a class="reference internal" href="../reference/datamodel.html#object.__add__" title="object.__add__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__add__()</span></code></a> 的值，並喪失讓 <code class="docutils literal notranslate"><span class="pre">B</span></code> 定義一個更完善的 <a class="reference internal" href="../reference/datamodel.html#object.__radd__" title="object.__radd__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__radd__()</span></code></a> 的機會，因此模板需要回傳一個來自 <code class="xref py py-meth docutils literal notranslate"><span class="pre">__add__()</span></code> 的 <a class="reference internal" href="constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-const docutils literal notranslate"><span class="pre">NotImplemented</span></code></a>。（或者 <code class="docutils literal notranslate"><span class="pre">A</span></code> 可能完全不實作 <code class="xref py py-meth docutils literal notranslate"><span class="pre">__add__()</span></code>。）</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">A</span></code> falls back to the boilerplate code, and it were to
+return a value from <a class="reference internal" href="../reference/datamodel.html#object.__add__" title="object.__add__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__add__()</span></code></a>, we'd miss the possibility
+that <code class="docutils literal notranslate"><span class="pre">B</span></code> defines a more intelligent <a class="reference internal" href="../reference/datamodel.html#object.__radd__" title="object.__radd__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__radd__()</span></code></a>, so the
+boilerplate should return <a class="reference internal" href="constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code></a> from
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">__add__()</span></code>. (Or <code class="docutils literal notranslate"><span class="pre">A</span></code> may not implement <code class="xref py py-meth docutils literal notranslate"><span class="pre">__add__()</span></code> at
+all.)</p></li>
 <li><p>接著看 <code class="docutils literal notranslate"><span class="pre">B</span></code> 的 <a class="reference internal" href="../reference/datamodel.html#object.__radd__" title="object.__radd__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__radd__()</span></code></a>。如果它接受 <code class="docutils literal notranslate"><span class="pre">a</span></code> ，不會發生問題。</p></li>
 <li><p>如果沒有成功回退到模板，就沒有更多的方法可以去嘗試，因此這裡將使用預設的實作。</p></li>
 <li><p>如果 <code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">&lt;:</span> <span class="pre">A</span></code>，Python 會在 <code class="docutils literal notranslate"><span class="pre">A.__add__</span></code> 之前嘗試 <code class="docutils literal notranslate"><span class="pre">B.__radd__</span></code>。這是可行的，因為它是透過對 <code class="docutils literal notranslate"><span class="pre">A</span></code> 的理解而實作的，所以這可以在交給 <a class="reference internal" href="#numbers.Complex" title="numbers.Complex"><code class="xref py py-class docutils literal notranslate"><span class="pre">Complex</span></code></a> 之前處理好這些實例。</p></li>
@@ -387,23 +376,7 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numbers</span></code> --- 數值的抽象基底類別</a><ul>
-<li><a class="reference internal" href="#numbers.Number"><code class="docutils literal notranslate"><span class="pre">Number</span></code></a></li>
-<li><a class="reference internal" href="#the-numeric-tower">數值的階層</a><ul>
-<li><a class="reference internal" href="#numbers.Complex"><code class="docutils literal notranslate"><span class="pre">Complex</span></code></a><ul>
-<li><a class="reference internal" href="#numbers.Complex.real"><code class="docutils literal notranslate"><span class="pre">Complex.real</span></code></a></li>
-<li><a class="reference internal" href="#numbers.Complex.imag"><code class="docutils literal notranslate"><span class="pre">Complex.imag</span></code></a></li>
-<li><a class="reference internal" href="#numbers.Complex.conjugate"><code class="docutils literal notranslate"><span class="pre">Complex.conjugate()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#numbers.Real"><code class="docutils literal notranslate"><span class="pre">Real</span></code></a></li>
-<li><a class="reference internal" href="#numbers.Rational"><code class="docutils literal notranslate"><span class="pre">Rational</span></code></a><ul>
-<li><a class="reference internal" href="#numbers.Rational.numerator"><code class="docutils literal notranslate"><span class="pre">Rational.numerator</span></code></a></li>
-<li><a class="reference internal" href="#numbers.Rational.denominator"><code class="docutils literal notranslate"><span class="pre">Rational.denominator</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#numbers.Integral"><code class="docutils literal notranslate"><span class="pre">Integral</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#the-numeric-tower">數值的階層</a></li>
 <li><a class="reference internal" href="#notes-for-type-implementors">給型別實作者的註記</a><ul>
 <li><a class="reference internal" href="#adding-more-numeric-abcs">加入更多數值 ABC</a></li>
 <li><a class="reference internal" href="#implementing-the-arithmetic-operations">實作算術操作</a></li>
@@ -459,7 +432,7 @@
           <a href="numeric.html" title="數值與數學模組"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -469,7 +442,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -499,13 +472,14 @@
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -513,7 +487,7 @@
 <br />
     <br />
 
-    最後更新於 Dec 22, 2023 (02:09 UTC)。
+    最後更新於 Mar 10, 2024 (07:25 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Data model &#8212; Python 3.12.1 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. 資料模型 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=3221873d"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.1 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -85,7 +85,7 @@
   <div>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
-<li><a class="reference internal" href="#">3. Data model</a><ul>
+<li><a class="reference internal" href="#">3. 資料模型</a><ul>
 <li><a class="reference internal" href="#objects-values-and-types">3.1. Objects, values and types</a></li>
 <li><a class="reference internal" href="#the-standard-type-hierarchy">3.2. 標準型別階層</a><ul>
 <li><a class="reference internal" href="#none">3.2.1. None</a></li>
@@ -108,35 +108,12 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#callable-types">3.2.8. Callable types</a><ul>
-<li><a class="reference internal" href="#user-defined-functions">3.2.8.1. User-defined functions</a><ul>
-<li><a class="reference internal" href="#special-read-only-attributes">3.2.8.1.1. Special read-only attributes</a><ul>
-<li><a class="reference internal" href="#function.__globals__"><code class="docutils literal notranslate"><span class="pre">function.__globals__</span></code></a></li>
-<li><a class="reference internal" href="#function.__closure__"><code class="docutils literal notranslate"><span class="pre">function.__closure__</span></code></a></li>
+<li><a class="reference internal" href="#user-defined-functions">3.2.8.1. 自訂函式</a><ul>
+<li><a class="reference internal" href="#special-read-only-attributes">3.2.8.1.1. 特殊唯讀屬性</a></li>
+<li><a class="reference internal" href="#special-writable-attributes">3.2.8.1.2. 特殊可寫屬性</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#special-writable-attributes">3.2.8.1.2. 特殊可寫屬性</a><ul>
-<li><a class="reference internal" href="#function.__doc__"><code class="docutils literal notranslate"><span class="pre">function.__doc__</span></code></a></li>
-<li><a class="reference internal" href="#function.__name__"><code class="docutils literal notranslate"><span class="pre">function.__name__</span></code></a></li>
-<li><a class="reference internal" href="#function.__qualname__"><code class="docutils literal notranslate"><span class="pre">function.__qualname__</span></code></a></li>
-<li><a class="reference internal" href="#function.__module__"><code class="docutils literal notranslate"><span class="pre">function.__module__</span></code></a></li>
-<li><a class="reference internal" href="#function.__defaults__"><code class="docutils literal notranslate"><span class="pre">function.__defaults__</span></code></a></li>
-<li><a class="reference internal" href="#function.__code__"><code class="docutils literal notranslate"><span class="pre">function.__code__</span></code></a></li>
-<li><a class="reference internal" href="#function.__dict__"><code class="docutils literal notranslate"><span class="pre">function.__dict__</span></code></a></li>
-<li><a class="reference internal" href="#function.__annotations__"><code class="docutils literal notranslate"><span class="pre">function.__annotations__</span></code></a></li>
-<li><a class="reference internal" href="#function.__kwdefaults__"><code class="docutils literal notranslate"><span class="pre">function.__kwdefaults__</span></code></a></li>
-<li><a class="reference internal" href="#function.__type_params__"><code class="docutils literal notranslate"><span class="pre">function.__type_params__</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#instance-methods">3.2.8.2. Instance methods</a><ul>
-<li><a class="reference internal" href="#method.__self__"><code class="docutils literal notranslate"><span class="pre">method.__self__</span></code></a></li>
-<li><a class="reference internal" href="#method.__func__"><code class="docutils literal notranslate"><span class="pre">method.__func__</span></code></a></li>
-<li><a class="reference internal" href="#method.__doc__"><code class="docutils literal notranslate"><span class="pre">method.__doc__</span></code></a></li>
-<li><a class="reference internal" href="#method.__name__"><code class="docutils literal notranslate"><span class="pre">method.__name__</span></code></a></li>
-<li><a class="reference internal" href="#method.__module__"><code class="docutils literal notranslate"><span class="pre">method.__module__</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#instance-methods">3.2.8.2. Instance methods</a></li>
 <li><a class="reference internal" href="#generator-functions">3.2.8.3. Generator functions</a></li>
 <li><a class="reference internal" href="#coroutine-functions">3.2.8.4. Coroutine functions</a></li>
 <li><a class="reference internal" href="#asynchronous-generator-functions">3.2.8.5. Asynchronous generator functions</a></li>
@@ -152,66 +129,18 @@
 <li><a class="reference internal" href="#i-o-objects-also-known-as-file-objects">3.2.12. I/O objects (also known as file objects)</a></li>
 <li><a class="reference internal" href="#internal-types">3.2.13. Internal types</a><ul>
 <li><a class="reference internal" href="#code-objects">3.2.13.1. Code objects</a><ul>
-<li><a class="reference internal" href="#index-58">3.2.13.1.1. Special read-only attributes</a><ul>
-<li><a class="reference internal" href="#codeobject.co_name"><code class="docutils literal notranslate"><span class="pre">codeobject.co_name</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_qualname"><code class="docutils literal notranslate"><span class="pre">codeobject.co_qualname</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_argcount"><code class="docutils literal notranslate"><span class="pre">codeobject.co_argcount</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_posonlyargcount"><code class="docutils literal notranslate"><span class="pre">codeobject.co_posonlyargcount</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_kwonlyargcount"><code class="docutils literal notranslate"><span class="pre">codeobject.co_kwonlyargcount</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_nlocals"><code class="docutils literal notranslate"><span class="pre">codeobject.co_nlocals</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_varnames"><code class="docutils literal notranslate"><span class="pre">codeobject.co_varnames</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_cellvars"><code class="docutils literal notranslate"><span class="pre">codeobject.co_cellvars</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_freevars"><code class="docutils literal notranslate"><span class="pre">codeobject.co_freevars</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_code"><code class="docutils literal notranslate"><span class="pre">codeobject.co_code</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_consts"><code class="docutils literal notranslate"><span class="pre">codeobject.co_consts</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_names"><code class="docutils literal notranslate"><span class="pre">codeobject.co_names</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_filename"><code class="docutils literal notranslate"><span class="pre">codeobject.co_filename</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_firstlineno"><code class="docutils literal notranslate"><span class="pre">codeobject.co_firstlineno</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_lnotab"><code class="docutils literal notranslate"><span class="pre">codeobject.co_lnotab</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_stacksize"><code class="docutils literal notranslate"><span class="pre">codeobject.co_stacksize</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_flags"><code class="docutils literal notranslate"><span class="pre">codeobject.co_flags</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#the-co-positions-method">3.2.13.1.2. The <code class="xref py py-meth docutils literal notranslate"><span class="pre">co_positions()</span></code> method</a><ul>
-<li><a class="reference internal" href="#codeobject.co_positions"><code class="docutils literal notranslate"><span class="pre">codeobject.co_positions()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#index-58">3.2.13.1.1. 特殊唯讀屬性</a></li>
+<li><a class="reference internal" href="#methods-on-code-objects">3.2.13.1.2. 用於程式碼物件的方法</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#frame-objects">3.2.13.2. Frame objects</a><ul>
-<li><a class="reference internal" href="#index-63">3.2.13.2.1. Special read-only attributes</a><ul>
-<li><a class="reference internal" href="#frame.f_back"><code class="docutils literal notranslate"><span class="pre">frame.f_back</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_code"><code class="docutils literal notranslate"><span class="pre">frame.f_code</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_locals"><code class="docutils literal notranslate"><span class="pre">frame.f_locals</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_globals"><code class="docutils literal notranslate"><span class="pre">frame.f_globals</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_builtins"><code class="docutils literal notranslate"><span class="pre">frame.f_builtins</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_lasti"><code class="docutils literal notranslate"><span class="pre">frame.f_lasti</span></code></a></li>
+<li><a class="reference internal" href="#index-64">3.2.13.2.1. 特殊唯讀屬性</a></li>
+<li><a class="reference internal" href="#index-65">3.2.13.2.2. 特殊可寫屬性</a></li>
+<li><a class="reference internal" href="#frame-object-methods">3.2.13.2.3. Frame object methods</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#index-64">3.2.13.2.2. 特殊可寫屬性</a><ul>
-<li><a class="reference internal" href="#frame.f_trace"><code class="docutils literal notranslate"><span class="pre">frame.f_trace</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_trace_lines"><code class="docutils literal notranslate"><span class="pre">frame.f_trace_lines</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_trace_opcodes"><code class="docutils literal notranslate"><span class="pre">frame.f_trace_opcodes</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_lineno"><code class="docutils literal notranslate"><span class="pre">frame.f_lineno</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#frame-object-methods">3.2.13.2.3. Frame object methods</a><ul>
-<li><a class="reference internal" href="#frame.clear"><code class="docutils literal notranslate"><span class="pre">frame.clear()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#traceback-objects">3.2.13.3. Traceback objects</a><ul>
-<li><a class="reference internal" href="#traceback.tb_frame"><code class="docutils literal notranslate"><span class="pre">traceback.tb_frame</span></code></a></li>
-<li><a class="reference internal" href="#traceback.tb_lineno"><code class="docutils literal notranslate"><span class="pre">traceback.tb_lineno</span></code></a></li>
-<li><a class="reference internal" href="#traceback.tb_lasti"><code class="docutils literal notranslate"><span class="pre">traceback.tb_lasti</span></code></a></li>
-<li><a class="reference internal" href="#traceback.tb_next"><code class="docutils literal notranslate"><span class="pre">traceback.tb_next</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#slice-objects">3.2.13.4. Slice objects</a><ul>
-<li><a class="reference internal" href="#slice.indices"><code class="docutils literal notranslate"><span class="pre">slice.indices()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#traceback-objects">3.2.13.3. Traceback objects</a></li>
+<li><a class="reference internal" href="#slice-objects">3.2.13.4. Slice objects</a></li>
 <li><a class="reference internal" href="#static-method-objects">3.2.13.5. Static method objects</a></li>
 <li><a class="reference internal" href="#class-method-objects">3.2.13.6. Class method objects</a></li>
 </ul>
@@ -219,53 +148,17 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#special-method-names">3.3. Special method names</a><ul>
-<li><a class="reference internal" href="#basic-customization">3.3.1. Basic customization</a><ul>
-<li><a class="reference internal" href="#object.__new__"><code class="docutils literal notranslate"><span class="pre">object.__new__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__init__"><code class="docutils literal notranslate"><span class="pre">object.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__del__"><code class="docutils literal notranslate"><span class="pre">object.__del__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__repr__"><code class="docutils literal notranslate"><span class="pre">object.__repr__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__str__"><code class="docutils literal notranslate"><span class="pre">object.__str__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__bytes__"><code class="docutils literal notranslate"><span class="pre">object.__bytes__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__format__"><code class="docutils literal notranslate"><span class="pre">object.__format__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__lt__"><code class="docutils literal notranslate"><span class="pre">object.__lt__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__le__"><code class="docutils literal notranslate"><span class="pre">object.__le__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__eq__"><code class="docutils literal notranslate"><span class="pre">object.__eq__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ne__"><code class="docutils literal notranslate"><span class="pre">object.__ne__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__gt__"><code class="docutils literal notranslate"><span class="pre">object.__gt__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ge__"><code class="docutils literal notranslate"><span class="pre">object.__ge__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__hash__"><code class="docutils literal notranslate"><span class="pre">object.__hash__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__bool__"><code class="docutils literal notranslate"><span class="pre">object.__bool__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#basic-customization">3.3.1. Basic customization</a></li>
 <li><a class="reference internal" href="#customizing-attribute-access">3.3.2. Customizing attribute access</a><ul>
-<li><a class="reference internal" href="#object.__getattr__"><code class="docutils literal notranslate"><span class="pre">object.__getattr__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__getattribute__"><code class="docutils literal notranslate"><span class="pre">object.__getattribute__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__setattr__"><code class="docutils literal notranslate"><span class="pre">object.__setattr__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__delattr__"><code class="docutils literal notranslate"><span class="pre">object.__delattr__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__dir__"><code class="docutils literal notranslate"><span class="pre">object.__dir__()</span></code></a></li>
 <li><a class="reference internal" href="#customizing-module-attribute-access">3.3.2.1. Customizing module attribute access</a></li>
-<li><a class="reference internal" href="#implementing-descriptors">3.3.2.2. Implementing Descriptors</a><ul>
-<li><a class="reference internal" href="#object.__get__"><code class="docutils literal notranslate"><span class="pre">object.__get__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__set__"><code class="docutils literal notranslate"><span class="pre">object.__set__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__delete__"><code class="docutils literal notranslate"><span class="pre">object.__delete__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__objclass__"><code class="docutils literal notranslate"><span class="pre">object.__objclass__</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#implementing-descriptors">3.3.2.2. Implementing Descriptors</a></li>
 <li><a class="reference internal" href="#invoking-descriptors">3.3.2.3. Invoking Descriptors</a></li>
-<li><a class="reference internal" href="#slots">3.3.2.4. __slots__</a><ul>
-<li><a class="reference internal" href="#object.__slots__"><code class="docutils literal notranslate"><span class="pre">object.__slots__</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#slots">3.3.2.4. __slots__</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#customizing-class-creation">3.3.3. Customizing class creation</a><ul>
-<li><a class="reference internal" href="#object.__init_subclass__"><code class="docutils literal notranslate"><span class="pre">object.__init_subclass__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__set_name__"><code class="docutils literal notranslate"><span class="pre">object.__set_name__()</span></code></a></li>
 <li><a class="reference internal" href="#metaclasses">3.3.3.1. Metaclasses</a></li>
-<li><a class="reference internal" href="#resolving-mro-entries">3.3.3.2. Resolving MRO entries</a><ul>
-<li><a class="reference internal" href="#object.__mro_entries__"><code class="docutils literal notranslate"><span class="pre">object.__mro_entries__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#resolving-mro-entries">3.3.3.2. Resolving MRO entries</a></li>
 <li><a class="reference internal" href="#determining-the-appropriate-metaclass">3.3.3.3. Determining the appropriate metaclass</a></li>
 <li><a class="reference internal" href="#preparing-the-class-namespace">3.3.3.4. Preparing the class namespace</a></li>
 <li><a class="reference internal" href="#executing-the-class-body">3.3.3.5. Executing the class body</a></li>
@@ -273,127 +166,26 @@
 <li><a class="reference internal" href="#uses-for-metaclasses">3.3.3.7. Uses for metaclasses</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#customizing-instance-and-subclass-checks">3.3.4. Customizing instance and subclass checks</a><ul>
-<li><a class="reference internal" href="#class.__instancecheck__"><code class="docutils literal notranslate"><span class="pre">class.__instancecheck__()</span></code></a></li>
-<li><a class="reference internal" href="#class.__subclasscheck__"><code class="docutils literal notranslate"><span class="pre">class.__subclasscheck__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#customizing-instance-and-subclass-checks">3.3.4. Customizing instance and subclass checks</a></li>
 <li><a class="reference internal" href="#emulating-generic-types">3.3.5. Emulating generic types</a><ul>
-<li><a class="reference internal" href="#object.__class_getitem__"><code class="docutils literal notranslate"><span class="pre">object.__class_getitem__()</span></code></a></li>
 <li><a class="reference internal" href="#the-purpose-of-class-getitem">3.3.5.1. The purpose of <em>__class_getitem__</em></a></li>
 <li><a class="reference internal" href="#class-getitem-versus-getitem">3.3.5.2. <em>__class_getitem__</em> versus <em>__getitem__</em></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#emulating-callable-objects">3.3.6. Emulating callable objects</a><ul>
-<li><a class="reference internal" href="#object.__call__"><code class="docutils literal notranslate"><span class="pre">object.__call__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#emulating-container-types">3.3.7. Emulating container types</a><ul>
-<li><a class="reference internal" href="#object.__len__"><code class="docutils literal notranslate"><span class="pre">object.__len__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__length_hint__"><code class="docutils literal notranslate"><span class="pre">object.__length_hint__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__getitem__"><code class="docutils literal notranslate"><span class="pre">object.__getitem__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__setitem__"><code class="docutils literal notranslate"><span class="pre">object.__setitem__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__delitem__"><code class="docutils literal notranslate"><span class="pre">object.__delitem__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__missing__"><code class="docutils literal notranslate"><span class="pre">object.__missing__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__iter__"><code class="docutils literal notranslate"><span class="pre">object.__iter__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__reversed__"><code class="docutils literal notranslate"><span class="pre">object.__reversed__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__contains__"><code class="docutils literal notranslate"><span class="pre">object.__contains__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#emulating-numeric-types">3.3.8. Emulating numeric types</a><ul>
-<li><a class="reference internal" href="#object.__add__"><code class="docutils literal notranslate"><span class="pre">object.__add__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__sub__"><code class="docutils literal notranslate"><span class="pre">object.__sub__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__mul__"><code class="docutils literal notranslate"><span class="pre">object.__mul__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__matmul__"><code class="docutils literal notranslate"><span class="pre">object.__matmul__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__truediv__"><code class="docutils literal notranslate"><span class="pre">object.__truediv__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__floordiv__"><code class="docutils literal notranslate"><span class="pre">object.__floordiv__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__mod__"><code class="docutils literal notranslate"><span class="pre">object.__mod__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__divmod__"><code class="docutils literal notranslate"><span class="pre">object.__divmod__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__pow__"><code class="docutils literal notranslate"><span class="pre">object.__pow__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__lshift__"><code class="docutils literal notranslate"><span class="pre">object.__lshift__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rshift__"><code class="docutils literal notranslate"><span class="pre">object.__rshift__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__and__"><code class="docutils literal notranslate"><span class="pre">object.__and__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__xor__"><code class="docutils literal notranslate"><span class="pre">object.__xor__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__or__"><code class="docutils literal notranslate"><span class="pre">object.__or__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__radd__"><code class="docutils literal notranslate"><span class="pre">object.__radd__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rsub__"><code class="docutils literal notranslate"><span class="pre">object.__rsub__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rmul__"><code class="docutils literal notranslate"><span class="pre">object.__rmul__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rmatmul__"><code class="docutils literal notranslate"><span class="pre">object.__rmatmul__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rtruediv__"><code class="docutils literal notranslate"><span class="pre">object.__rtruediv__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rfloordiv__"><code class="docutils literal notranslate"><span class="pre">object.__rfloordiv__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rmod__"><code class="docutils literal notranslate"><span class="pre">object.__rmod__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rdivmod__"><code class="docutils literal notranslate"><span class="pre">object.__rdivmod__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rpow__"><code class="docutils literal notranslate"><span class="pre">object.__rpow__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rlshift__"><code class="docutils literal notranslate"><span class="pre">object.__rlshift__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rrshift__"><code class="docutils literal notranslate"><span class="pre">object.__rrshift__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rand__"><code class="docutils literal notranslate"><span class="pre">object.__rand__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rxor__"><code class="docutils literal notranslate"><span class="pre">object.__rxor__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ror__"><code class="docutils literal notranslate"><span class="pre">object.__ror__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__iadd__"><code class="docutils literal notranslate"><span class="pre">object.__iadd__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__isub__"><code class="docutils literal notranslate"><span class="pre">object.__isub__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__imul__"><code class="docutils literal notranslate"><span class="pre">object.__imul__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__imatmul__"><code class="docutils literal notranslate"><span class="pre">object.__imatmul__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__itruediv__"><code class="docutils literal notranslate"><span class="pre">object.__itruediv__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ifloordiv__"><code class="docutils literal notranslate"><span class="pre">object.__ifloordiv__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__imod__"><code class="docutils literal notranslate"><span class="pre">object.__imod__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ipow__"><code class="docutils literal notranslate"><span class="pre">object.__ipow__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ilshift__"><code class="docutils literal notranslate"><span class="pre">object.__ilshift__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__irshift__"><code class="docutils literal notranslate"><span class="pre">object.__irshift__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__iand__"><code class="docutils literal notranslate"><span class="pre">object.__iand__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ixor__"><code class="docutils literal notranslate"><span class="pre">object.__ixor__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ior__"><code class="docutils literal notranslate"><span class="pre">object.__ior__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__neg__"><code class="docutils literal notranslate"><span class="pre">object.__neg__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__pos__"><code class="docutils literal notranslate"><span class="pre">object.__pos__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__abs__"><code class="docutils literal notranslate"><span class="pre">object.__abs__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__invert__"><code class="docutils literal notranslate"><span class="pre">object.__invert__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__complex__"><code class="docutils literal notranslate"><span class="pre">object.__complex__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__int__"><code class="docutils literal notranslate"><span class="pre">object.__int__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__float__"><code class="docutils literal notranslate"><span class="pre">object.__float__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__index__"><code class="docutils literal notranslate"><span class="pre">object.__index__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__round__"><code class="docutils literal notranslate"><span class="pre">object.__round__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__trunc__"><code class="docutils literal notranslate"><span class="pre">object.__trunc__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__floor__"><code class="docutils literal notranslate"><span class="pre">object.__floor__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ceil__"><code class="docutils literal notranslate"><span class="pre">object.__ceil__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#with-statement-context-managers">3.3.9. With Statement Context Managers</a><ul>
-<li><a class="reference internal" href="#object.__enter__"><code class="docutils literal notranslate"><span class="pre">object.__enter__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__exit__"><code class="docutils literal notranslate"><span class="pre">object.__exit__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-positional-arguments-in-class-pattern-matching">3.3.10. Customizing positional arguments in class pattern matching</a><ul>
-<li><a class="reference internal" href="#object.__match_args__"><code class="docutils literal notranslate"><span class="pre">object.__match_args__</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#emulating-buffer-types">3.3.11. Emulating buffer types</a><ul>
-<li><a class="reference internal" href="#object.__buffer__"><code class="docutils literal notranslate"><span class="pre">object.__buffer__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__release_buffer__"><code class="docutils literal notranslate"><span class="pre">object.__release_buffer__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#emulating-callable-objects">3.3.6. Emulating callable objects</a></li>
+<li><a class="reference internal" href="#emulating-container-types">3.3.7. Emulating container types</a></li>
+<li><a class="reference internal" href="#emulating-numeric-types">3.3.8. Emulating numeric types</a></li>
+<li><a class="reference internal" href="#with-statement-context-managers">3.3.9. With Statement Context Managers</a></li>
+<li><a class="reference internal" href="#customizing-positional-arguments-in-class-pattern-matching">3.3.10. Customizing positional arguments in class pattern matching</a></li>
+<li><a class="reference internal" href="#emulating-buffer-types">3.3.11. Emulating buffer types</a></li>
 <li><a class="reference internal" href="#special-method-lookup">3.3.12. Special method lookup</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#coroutines">3.4. 協程</a><ul>
-<li><a class="reference internal" href="#awaitable-objects">3.4.1. Awaitable Objects</a><ul>
-<li><a class="reference internal" href="#object.__await__"><code class="docutils literal notranslate"><span class="pre">object.__await__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#coroutine-objects">3.4.2. Coroutine Objects</a><ul>
-<li><a class="reference internal" href="#coroutine.send"><code class="docutils literal notranslate"><span class="pre">coroutine.send()</span></code></a></li>
-<li><a class="reference internal" href="#coroutine.throw"><code class="docutils literal notranslate"><span class="pre">coroutine.throw()</span></code></a></li>
-<li><a class="reference internal" href="#coroutine.close"><code class="docutils literal notranslate"><span class="pre">coroutine.close()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#asynchronous-iterators">3.4.3. Asynchronous Iterators</a><ul>
-<li><a class="reference internal" href="#object.__aiter__"><code class="docutils literal notranslate"><span class="pre">object.__aiter__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__anext__"><code class="docutils literal notranslate"><span class="pre">object.__anext__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#asynchronous-context-managers">3.4.4. Asynchronous Context Managers</a><ul>
-<li><a class="reference internal" href="#object.__aenter__"><code class="docutils literal notranslate"><span class="pre">object.__aenter__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__aexit__"><code class="docutils literal notranslate"><span class="pre">object.__aexit__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#awaitable-objects">3.4.1. Awaitable Objects</a></li>
+<li><a class="reference internal" href="#coroutine-objects">3.4.2. Coroutine Objects</a></li>
+<li><a class="reference internal" href="#asynchronous-iterators">3.4.3. Asynchronous Iterators</a></li>
+<li><a class="reference internal" href="#asynchronous-context-managers">3.4.4. Asynchronous Context Managers</a></li>
 </ul>
 </li>
 </ul>
@@ -443,7 +235,7 @@
           <a href="lexical_analysis.html" title="2. Lexical analysis"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -453,11 +245,11 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 語言參考手冊</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><span class="section-number">3. </span>Data model</a></li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">3. </span>資料模型</a></li>
                 <li class="right">
                     
 
@@ -488,7 +280,7 @@
           <div class="body" role="main">
             
   <section id="data-model">
-<span id="datamodel"></span><h1><span class="section-number">3. </span>Data model<a class="headerlink" href="#data-model" title="Link to this heading">¶</a></h1>
+<span id="datamodel"></span><h1><span class="section-number">3. </span>資料模型<a class="headerlink" href="#data-model" title="Link to this heading">¶</a></h1>
 <section id="objects-values-and-types">
 <span id="objects"></span><h2><span class="section-number">3.1. </span>Objects, values and types<a class="headerlink" href="#objects-values-and-types" title="Link to this heading">¶</a></h2>
 <p id="index-0"><em class="dfn">Objects</em> are Python's abstraction for data.  All data in a Python program
@@ -497,7 +289,7 @@ conformance to Von Neumann's model of a &quot;stored program computer&quot;, cod
 represented by objects.)</p>
 <span class="target" id="index-1"></span><p>Every object has an identity, a type and a value.  An object's <em>identity</em> never
 changes once it has been created; you may think of it as the object's address in
-memory.  The '<a class="reference internal" href="expressions.html#is"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">is</span></code></a>' operator compares the identity of two objects; the
+memory.  The <a class="reference internal" href="expressions.html#is"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">is</span></code></a> operator compares the identity of two objects; the
 <a class="reference internal" href="../library/functions.html#id" title="id"><code class="xref py py-func docutils literal notranslate"><span class="pre">id()</span></code></a> function returns an integer representing its identity.</p>
 <div class="impl-detail compound">
 <p><strong>CPython 實作細節：</strong> For CPython, <code class="docutils literal notranslate"><span class="pre">id(x)</span></code> is the memory address where <code class="docutils literal notranslate"><span class="pre">x</span></code> is stored.</p>
@@ -533,15 +325,15 @@ unreachable (so you should always close files explicitly).</p>
 </div>
 <p>Note that the use of the implementation's tracing or debugging facilities may
 keep objects alive that would normally be collectable. Also note that catching
-an exception with a '<a class="reference internal" href="compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a>...<a class="reference internal" href="compound_stmts.html#except"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">except</span></code></a>' statement may keep
+an exception with a <a class="reference internal" href="compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a>...<a class="reference internal" href="compound_stmts.html#except"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">except</span></code></a> statement may keep
 objects alive.</p>
 <p>Some objects contain references to &quot;external&quot; resources such as open files or
 windows.  It is understood that these resources are freed when the object is
 garbage-collected, but since garbage collection is not guaranteed to happen,
 such objects also provide an explicit way to release the external resource,
 usually a <code class="xref py py-meth docutils literal notranslate"><span class="pre">close()</span></code> method. Programs are strongly recommended to explicitly
-close such objects.  The '<a class="reference internal" href="compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a>...<a class="reference internal" href="compound_stmts.html#finally"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">finally</span></code></a>' statement
-and the '<a class="reference internal" href="compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a>' statement provide convenient ways to do this.</p>
+close such objects.  The <a class="reference internal" href="compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a>...<a class="reference internal" href="compound_stmts.html#finally"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">finally</span></code></a> statement
+and the <a class="reference internal" href="compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a> statement provide convenient ways to do this.</p>
 <p id="index-3">Some objects contain references to other objects; these are called <em>containers</em>.
 Examples of containers are tuples, lists and dictionaries.  The references are
 part of a container's value.  In most cases, when we talk about the value of a
@@ -580,14 +372,14 @@ don't explicitly return anything. Its truth value is false.</p>
 <section id="notimplemented">
 <h3><span class="section-number">3.2.2. </span>NotImplemented<a class="headerlink" href="#notimplemented" title="Link to this heading">¶</a></h3>
 <p id="index-7">This type has a single value.  There is a single object with this value. This
-object is accessed through the built-in name <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>. Numeric methods
+object is accessed through the built-in name <a class="reference internal" href="../library/constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code></a>. Numeric methods
 and rich comparison methods should return this value if they do not implement the
 operation for the operands provided.  (The interpreter will then try the
 reflected operation, or some other fallback, depending on the operator.)  It
 should not be evaluated in a boolean context.</p>
 <p>更多細節請見 <a class="reference internal" href="../library/numbers.html#implementing-the-arithmetic-operations"><span class="std std-ref">實作算術操作</span></a>。</p>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.9 版的變更: </span>Evaluating <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> in a boolean context is deprecated. While
+<p><span class="versionmodified changed">在 3.9 版的變更: </span>Evaluating <a class="reference internal" href="../library/constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code></a> in a boolean context is deprecated. While
 it currently evaluates as true, it will emit a <a class="reference internal" href="../library/exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a>.
 It will raise a <a class="reference internal" href="../library/exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> in a future version of Python.</p>
 </div>
@@ -786,7 +578,7 @@ Replacing an existing key does not change the order, however removing a key
 and re-inserting it will add it to the end instead of keeping its old place.</p>
 <p>Dictionaries are mutable; they can be created by the <code class="docutils literal notranslate"><span class="pre">{...}</span></code> notation (see
 section <a class="reference internal" href="expressions.html#dict"><span class="std std-ref">Dictionary displays</span></a>).</p>
-<p id="index-32">The extension modules <a class="reference internal" href="../library/dbm.html#module-dbm.ndbm" title="dbm.ndbm: The standard &quot;database&quot; interface, based on ndbm. (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm.ndbm</span></code></a> and <a class="reference internal" href="../library/dbm.html#module-dbm.gnu" title="dbm.gnu: GNU's reinterpretation of dbm. (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm.gnu</span></code></a> provide
+<p id="index-32">The extension modules <a class="reference internal" href="../library/dbm.html#module-dbm.ndbm" title="dbm.ndbm: The New Database Manager (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm.ndbm</span></code></a> and <a class="reference internal" href="../library/dbm.html#module-dbm.gnu" title="dbm.gnu: GNU database manager (Unix)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dbm.gnu</span></code></a> provide
 additional examples of mapping types, as does the <a class="reference internal" href="../library/collections.html#module-collections" title="collections: Container datatypes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code></a>
 module.</p>
 <div class="versionchanged">
@@ -801,13 +593,13 @@ an implementation detail at that time rather than a language guarantee.</p>
 <p id="index-33">These are the types to which the function call operation (see section
 <a class="reference internal" href="expressions.html#calls"><span class="std std-ref">Calls</span></a>) can be applied:</p>
 <section id="user-defined-functions">
-<span id="user-defined-funcs"></span><h4><span class="section-number">3.2.8.1. </span>User-defined functions<a class="headerlink" href="#user-defined-functions" title="Link to this heading">¶</a></h4>
+<span id="user-defined-funcs"></span><h4><span class="section-number">3.2.8.1. </span>自訂函式<a class="headerlink" href="#user-defined-functions" title="Link to this heading">¶</a></h4>
 <p id="index-34">A user-defined function object is created by a function definition (see
 section <a class="reference internal" href="compound_stmts.html#function"><span class="std std-ref">函式定義</span></a>).  It should be called with an argument list
 containing the same number of items as the function's formal parameter
 list.</p>
 <section id="special-read-only-attributes">
-<h5><span class="section-number">3.2.8.1.1. </span>Special read-only attributes<a class="headerlink" href="#special-read-only-attributes" title="Link to this heading">¶</a></h5>
+<h5><span class="section-number">3.2.8.1.1. </span>特殊唯讀屬性<a class="headerlink" href="#special-read-only-attributes" title="Link to this heading">¶</a></h5>
 <table class="docutils align-default" id="index-35">
 <thead>
 <tr class="row-odd"><th class="head"><p>屬性</p></th>
@@ -906,8 +698,7 @@ or <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <dd></dd></dl>
 
 </td>
-<td><p>The <a class="reference internal" href="#code-objects"><span class="std std-ref">code object</span></a> representing
-the compiled function body.</p></td>
+<td><p>代表編譯函式主體的<a class="reference internal" href="#code-objects"><span class="std std-ref">程式碼物件</span></a>。</p></td>
 </tr>
 <tr class="row-even"><td><dl class="py attribute">
 <dt class="sig sig-object py" id="function.__dict__">
@@ -1103,9 +894,8 @@ built-in functions are <a class="reference internal" href="../library/functions.
 standard built-in module). The number and type of the arguments are
 determined by the C function. Special read-only attributes:</p>
 <ul class="simple">
-<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">__doc__</span></code> is the function's documentation string, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if
-unavailable. See <a class="reference internal" href="#function.__doc__" title="function.__doc__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">function.__doc__</span></code></a>.</p></li>
-<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">__name__</span></code> is the function's name. See <a class="reference internal" href="#function.__name__" title="function.__name__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">function.__name__</span></code></a>.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">__doc__</span></code> 是函式的文件字串，若不可用則為 <code class="docutils literal notranslate"><span class="pre">None</span></code>。請見 <a class="reference internal" href="#function.__doc__" title="function.__doc__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">function.__doc__</span></code></a>。</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">__name__</span></code> 是函式的名稱。請見 <a class="reference internal" href="#function.__name__" title="function.__name__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">function.__name__</span></code></a>。</p></li>
 <li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">__self__</span></code> is set to <code class="docutils literal notranslate"><span class="pre">None</span></code> (but see the next item).</p></li>
 <li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">__module__</span></code> is the name of
 the module the function was defined in or <code class="docutils literal notranslate"><span class="pre">None</span></code> if unavailable.
@@ -1287,7 +1077,7 @@ argument values are stored in the function object, not in the code object
 objects, code objects are immutable and contain no references (directly or
 indirectly) to mutable objects.</p>
 <section id="index-58">
-<span id="id5"></span><h5><span class="section-number">3.2.13.1.1. </span>Special read-only attributes<a class="headerlink" href="#index-58" title="Link to this heading">¶</a></h5>
+<span id="id5"></span><h5><span class="section-number">3.2.13.1.1. </span>特殊唯讀屬性<a class="headerlink" href="#index-58" title="Link to this heading">¶</a></h5>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><dl class="py attribute">
@@ -1304,7 +1094,11 @@ indirectly) to mutable objects.</p>
 <dd></dd></dl>
 
 </td>
-<td><p>The fully qualified function name</p></td>
+<td><p>The fully qualified function name</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.11 版新加入.</span></p>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td><dl class="py attribute">
 <dt class="sig sig-object py" id="codeobject.co_argcount">
@@ -1462,8 +1256,8 @@ versions of Python.</p>
 <a class="reference internal" href="#codeobject.co_consts" title="codeobject.co_consts"><code class="xref py py-attr docutils literal notranslate"><span class="pre">co_consts</span></code></a> is
 the documentation string of the function, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if undefined.</p>
 </section>
-<section id="the-co-positions-method">
-<h5><span class="section-number">3.2.13.1.2. </span>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">co_positions()</span></code> method<a class="headerlink" href="#the-co-positions-method" title="Link to this heading">¶</a></h5>
+<section id="methods-on-code-objects">
+<h5><span class="section-number">3.2.13.1.2. </span>用於程式碼物件的方法<a class="headerlink" href="#methods-on-code-objects" title="Link to this heading">¶</a></h5>
 <dl class="py method">
 <dt class="sig sig-object py" id="codeobject.co_positions">
 <span class="sig-prename descclassname"><span class="pre">codeobject.</span></span><span class="sig-name descname"><span class="pre">co_positions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#codeobject.co_positions" title="Link to this definition">¶</a></dt>
@@ -1499,15 +1293,64 @@ environment variable can be used.</p>
 </div>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="codeobject.co_lines">
+<span class="sig-prename descclassname"><span class="pre">codeobject.</span></span><span class="sig-name descname"><span class="pre">co_lines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#codeobject.co_lines" title="Link to this definition">¶</a></dt>
+<dd><p>Returns an iterator that yields information about successive ranges of
+<a class="reference internal" href="../glossary.html#term-bytecode"><span class="xref std std-term">bytecode</span></a>s. Each item yielded is a <code class="docutils literal notranslate"><span class="pre">(start,</span> <span class="pre">end,</span> <span class="pre">lineno)</span></code>
+<a class="reference internal" href="../library/stdtypes.html#tuple" title="tuple"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code> (an <a class="reference internal" href="../library/functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) represents the offset (inclusive) of the start
+of the <a class="reference internal" href="../glossary.html#term-bytecode"><span class="xref std std-term">bytecode</span></a> range</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">end</span></code> (an <a class="reference internal" href="../library/functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) represents the offset (exclusive) of the end of
+the <a class="reference internal" href="../glossary.html#term-bytecode"><span class="xref std std-term">bytecode</span></a> range</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lineno</span></code> is an <a class="reference internal" href="../library/functions.html#int" title="int"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a> representing the line number of the
+<a class="reference internal" href="../glossary.html#term-bytecode"><span class="xref std std-term">bytecode</span></a> range, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if the bytecodes in the given range
+have no line number</p></li>
+</ul>
+<p>The items yielded will have the following properties:</p>
+<ul class="simple">
+<li><p>The first range yielded will have a <code class="docutils literal notranslate"><span class="pre">start</span></code> of 0.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">(start,</span> <span class="pre">end)</span></code> ranges will be non-decreasing and consecutive. That
+is, for any pair of <a class="reference internal" href="../library/stdtypes.html#tuple" title="tuple"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a>s, the <code class="docutils literal notranslate"><span class="pre">start</span></code> of the second will be
+equal to the <code class="docutils literal notranslate"><span class="pre">end</span></code> of the first.</p></li>
+<li><p>No range will be backwards: <code class="docutils literal notranslate"><span class="pre">end</span> <span class="pre">&gt;=</span> <span class="pre">start</span></code> for all triples.</p></li>
+<li><p>The last <a class="reference internal" href="../library/stdtypes.html#tuple" title="tuple"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></a> yielded will have <code class="docutils literal notranslate"><span class="pre">end</span></code> equal to the size of the
+<a class="reference internal" href="../glossary.html#term-bytecode"><span class="xref std std-term">bytecode</span></a>.</p></li>
+</ul>
+<p>Zero-width ranges, where <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">==</span> <span class="pre">end</span></code>, are allowed. Zero-width ranges
+are used for lines that are present in the source code, but have been
+eliminated by the <a class="reference internal" href="../glossary.html#term-bytecode"><span class="xref std std-term">bytecode</span></a> compiler.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.10 版新加入.</span></p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">也參考</p>
+<dl class="simple">
+<dt><span class="target" id="index-62"></span><a class="pep reference external" href="https://peps.python.org/pep-0626/"><strong>PEP 626</strong></a> - Precise line numbers for debugging and other tools.</dt><dd><p>The PEP that introduced the <code class="xref py py-meth docutils literal notranslate"><span class="pre">co_lines()</span></code> method.</p>
+</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="codeobject.replace">
+<span class="sig-prename descclassname"><span class="pre">codeobject.</span></span><span class="sig-name descname"><span class="pre">replace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#codeobject.replace" title="Link to this definition">¶</a></dt>
+<dd><p>Return a copy of the code object with new values for the specified fields.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">在 3.8 版新加入.</span></p>
+</div>
+</dd></dl>
+
 </section>
 </section>
 <section id="frame-objects">
 <span id="id6"></span><h4><span class="section-number">3.2.13.2. </span>Frame objects<a class="headerlink" href="#frame-objects" title="Link to this heading">¶</a></h4>
-<p id="index-62">Frame objects represent execution frames.  They may occur in
+<p id="index-63">Frame objects represent execution frames.  They may occur in
 <a class="reference internal" href="#traceback-objects"><span class="std std-ref">traceback objects</span></a>,
 and are also passed to registered trace functions.</p>
-<section id="index-63">
-<span id="id7"></span><h5><span class="section-number">3.2.13.2.1. </span>Special read-only attributes<a class="headerlink" href="#index-63" title="Link to this heading">¶</a></h5>
+<section id="index-64">
+<span id="id7"></span><h5><span class="section-number">3.2.13.2.1. </span>特殊唯讀屬性<a class="headerlink" href="#index-64" title="Link to this heading">¶</a></h5>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><dl class="py attribute">
@@ -1567,8 +1410,8 @@ or <code class="docutils literal notranslate"><span class="pre">None</span></cod
 </tbody>
 </table>
 </section>
-<section id="index-64">
-<span id="id8"></span><h5><span class="section-number">3.2.13.2.2. </span>特殊可寫屬性<a class="headerlink" href="#index-64" title="Link to this heading">¶</a></h5>
+<section id="index-65">
+<span id="id8"></span><h5><span class="section-number">3.2.13.2.2. </span>特殊可寫屬性<a class="headerlink" href="#index-65" title="Link to this heading">¶</a></h5>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><dl class="py attribute">
@@ -1636,7 +1479,7 @@ and storing its <a class="reference internal" href="#traceback-objects"><span cl
 </section>
 <section id="traceback-objects">
 <span id="id9"></span><h4><span class="section-number">3.2.13.3. </span>Traceback objects<a class="headerlink" href="#traceback-objects" title="Link to this heading">¶</a></h4>
-<p id="index-65">Traceback objects represent the stack trace of an <a class="reference internal" href="../tutorial/errors.html#tut-errors"><span class="std std-ref">exception</span></a>.
+<p id="index-66">Traceback objects represent the stack trace of an <a class="reference internal" href="../tutorial/errors.html#tut-errors"><span class="std std-ref">exception</span></a>.
 A traceback object
 is implicitly created when an exception occurs, and may also be explicitly
 created by calling <a class="reference internal" href="../library/types.html#types.TracebackType" title="types.TracebackType"><code class="xref py py-class docutils literal notranslate"><span class="pre">types.TracebackType</span></code></a>.</p>
@@ -1658,7 +1501,7 @@ as <a class="reference internal" href="../library/sys.html#sys.last_traceback" t
 <p>For explicitly created tracebacks, it is up to the creator of the traceback
 to determine how the <a class="reference internal" href="#traceback.tb_next" title="traceback.tb_next"><code class="xref py py-attr docutils literal notranslate"><span class="pre">tb_next</span></code></a> attributes should be linked to
 form a full stack trace.</p>
-<p id="index-66">特殊唯讀屬性：</p>
+<p id="index-67">特殊唯讀屬性：</p>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><dl class="py attribute">
@@ -1695,7 +1538,7 @@ line number of its <a class="reference internal" href="#frame-objects"><span cla
 occurred in a
 <a class="reference internal" href="compound_stmts.html#try"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">try</span></code></a> statement with no matching except clause or with a
 <a class="reference internal" href="compound_stmts.html#finally"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">finally</span></code></a> clause.</p>
-<dl class="py attribute" id="index-67">
+<dl class="py attribute" id="index-68">
 <dt class="sig sig-object py" id="traceback.tb_next">
 <span class="sig-prename descclassname"><span class="pre">traceback.</span></span><span class="sig-name descname"><span class="pre">tb_next</span></span><a class="headerlink" href="#traceback.tb_next" title="Link to this definition">¶</a></dt>
 <dd><p>The special writable attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">tb_next</span></code> is the next level in the
@@ -1709,10 +1552,10 @@ there is no next level.</p>
 </section>
 <section id="slice-objects">
 <h4><span class="section-number">3.2.13.4. </span>Slice objects<a class="headerlink" href="#slice-objects" title="Link to this heading">¶</a></h4>
-<p id="index-68">Slice objects are used to represent slices for
+<p id="index-69">Slice objects are used to represent slices for
 <a class="reference internal" href="#object.__getitem__" title="object.__getitem__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getitem__()</span></code></a>
 methods.  They are also created by the built-in <a class="reference internal" href="../library/functions.html#slice" title="slice"><code class="xref py py-func docutils literal notranslate"><span class="pre">slice()</span></code></a> function.</p>
-<p id="index-69">Special read-only attributes: <a class="reference internal" href="../library/functions.html#slice.start" title="slice.start"><code class="xref py py-attr docutils literal notranslate"><span class="pre">start</span></code></a> is the lower bound;
+<p id="index-70">Special read-only attributes: <a class="reference internal" href="../library/functions.html#slice.start" title="slice.start"><code class="xref py py-attr docutils literal notranslate"><span class="pre">start</span></code></a> is the lower bound;
 <a class="reference internal" href="../library/functions.html#slice.stop" title="slice.stop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stop</span></code></a> is the upper bound; <a class="reference internal" href="../library/functions.html#slice.step" title="slice.step"><code class="xref py py-attr docutils literal notranslate"><span class="pre">step</span></code></a> is the step
 value; each is <code class="docutils literal notranslate"><span class="pre">None</span></code> if omitted.  These attributes can have any type.</p>
 <p>Slice objects support one method:</p>
@@ -1743,14 +1586,14 @@ objects are created by the built-in <a class="reference internal" href="../libra
 <p>A class method object, like a static method object, is a wrapper around another
 object that alters the way in which that object is retrieved from classes and
 class instances. The behaviour of class method objects upon such retrieval is
-described above, under &quot;User-defined methods&quot;. Class method objects are created
+described above, under <a class="reference internal" href="#instance-methods"><span class="std std-ref">&quot;instance methods&quot;</span></a>. Class method objects are created
 by the built-in <a class="reference internal" href="../library/functions.html#classmethod" title="classmethod"><code class="xref py py-func docutils literal notranslate"><span class="pre">classmethod()</span></code></a> constructor.</p>
 </section>
 </section>
 </section>
 <section id="special-method-names">
 <span id="specialnames"></span><h2><span class="section-number">3.3. </span>Special method names<a class="headerlink" href="#special-method-names" title="Link to this heading">¶</a></h2>
-<p id="index-70">A class can implement certain operations that are invoked by special syntax
+<p id="index-71">A class can implement certain operations that are invoked by special syntax
 (such as arithmetic operations or subscripting and slicing) by defining methods
 with special names. This is Python's approach to <em class="dfn">operator overloading</em>,
 allowing classes to define their own behavior with respect to language
@@ -1776,7 +1619,7 @@ Object Model.)</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="object.__new__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__new__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#object.__new__" title="Link to this definition">¶</a></dt>
-<dd><p id="index-71">Called to create a new instance of class <em>cls</em>.  <a class="reference internal" href="#object.__new__" title="object.__new__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__new__()</span></code></a> is a static
+<dd><p id="index-72">Called to create a new instance of class <em>cls</em>.  <a class="reference internal" href="#object.__new__" title="object.__new__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__new__()</span></code></a> is a static
 method (special-cased so you need not declare it as such) that takes the class
 of which an instance was requested as its first argument.  The remaining
 arguments are those passed to the object constructor expression (the call to the
@@ -1800,7 +1643,7 @@ overridden in custom metaclasses in order to customize class creation.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="object.__init__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#object.__init__" title="Link to this definition">¶</a></dt>
-<dd><p id="index-72">Called after the instance has been created (by <a class="reference internal" href="#object.__new__" title="object.__new__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__new__()</span></code></a>), but before
+<dd><p id="index-73">Called after the instance has been created (by <a class="reference internal" href="#object.__new__" title="object.__new__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__new__()</span></code></a>), but before
 it is returned to the caller.  The arguments are those passed to the
 class constructor expression.  If a base class has an <a class="reference internal" href="#object.__init__" title="object.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a>
 method, the derived class's <a class="reference internal" href="#object.__init__" title="object.__init__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__init__()</span></code></a> method, if any, must explicitly
@@ -1815,7 +1658,7 @@ cause a <a class="reference internal" href="../library/exceptions.html#TypeError
 <dl class="py method">
 <dt class="sig sig-object py" id="object.__del__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__del__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__del__" title="Link to this definition">¶</a></dt>
-<dd><p id="index-73">Called when the instance is about to be destroyed.  This is also called a
+<dd><p id="index-74">Called when the instance is about to be destroyed.  This is also called a
 finalizer or (improperly) a destructor.  If a base class has a
 <a class="reference internal" href="#object.__del__" title="object.__del__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__del__()</span></code></a> method, the derived class's <a class="reference internal" href="#object.__del__" title="object.__del__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__del__()</span></code></a> method,
 if any, must explicitly call it to ensure proper deletion of the base
@@ -1868,7 +1711,7 @@ that imported modules are still available at the time when the
 <a class="reference internal" href="#object.__del__" title="object.__del__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__del__()</span></code></a> method is called.</p></li>
 </ul>
 </div>
-<span class="target" id="index-74"></span></dd></dl>
+<span class="target" id="index-75"></span></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="object.__repr__">
@@ -1883,7 +1726,7 @@ but not <a class="reference internal" href="#object.__str__" title="object.__str
 &quot;informal&quot; string representation of instances of that class is required.</p>
 <p>This is typically used for debugging, so it is important that the representation
 is information-rich and unambiguous.</p>
-<span class="target" id="index-75"></span></dd></dl>
+<span class="target" id="index-76"></span></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="object.__str__">
@@ -1902,9 +1745,9 @@ calls <a class="reference internal" href="#object.__repr__" title="object.__repr
 <dl class="py method">
 <dt class="sig sig-object py" id="object.__bytes__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__bytes__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__bytes__" title="Link to this definition">¶</a></dt>
-<dd><p id="index-76">Called by <a class="reference internal" href="../library/functions.html#func-bytes"><span class="std std-ref">bytes</span></a> to compute a byte-string representation
+<dd><p id="index-77">Called by <a class="reference internal" href="../library/functions.html#func-bytes"><span class="std std-ref">bytes</span></a> to compute a byte-string representation
 of an object. This should return a <a class="reference internal" href="../library/stdtypes.html#bytes" title="bytes"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> object.</p>
-<span class="target" id="index-77"></span></dd></dl>
+<span class="target" id="index-78"></span></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="object.__format__">
@@ -1942,22 +1785,22 @@ than <code class="docutils literal notranslate"><span class="pre">format(str(x),
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__gt__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__gt__" title="Link to this definition">¶</a></dt>
 <dt class="sig sig-object py" id="object.__ge__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__ge__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__ge__" title="Link to this definition">¶</a></dt>
-<dd><p id="index-78">These are the so-called &quot;rich comparison&quot; methods. The correspondence between
+<dd><p id="index-79">These are the so-called &quot;rich comparison&quot; methods. The correspondence between
 operator symbols and method names is as follows: <code class="docutils literal notranslate"><span class="pre">x&lt;y</span></code> calls <code class="docutils literal notranslate"><span class="pre">x.__lt__(y)</span></code>,
 <code class="docutils literal notranslate"><span class="pre">x&lt;=y</span></code> calls <code class="docutils literal notranslate"><span class="pre">x.__le__(y)</span></code>, <code class="docutils literal notranslate"><span class="pre">x==y</span></code> calls <code class="docutils literal notranslate"><span class="pre">x.__eq__(y)</span></code>, <code class="docutils literal notranslate"><span class="pre">x!=y</span></code> calls
 <code class="docutils literal notranslate"><span class="pre">x.__ne__(y)</span></code>, <code class="docutils literal notranslate"><span class="pre">x&gt;y</span></code> calls <code class="docutils literal notranslate"><span class="pre">x.__gt__(y)</span></code>, and <code class="docutils literal notranslate"><span class="pre">x&gt;=y</span></code> calls
 <code class="docutils literal notranslate"><span class="pre">x.__ge__(y)</span></code>.</p>
-<p>A rich comparison method may return the singleton <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> if it does
+<p>A rich comparison method may return the singleton <a class="reference internal" href="../library/constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code></a> if it does
 not implement the operation for a given pair of arguments. By convention,
 <code class="docutils literal notranslate"><span class="pre">False</span></code> and <code class="docutils literal notranslate"><span class="pre">True</span></code> are returned for a successful comparison. However, these
 methods can return any value, so if the comparison operator is used in a Boolean
 context (e.g., in the condition of an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement), Python will call
 <a class="reference internal" href="../library/functions.html#bool" title="bool"><code class="xref py py-func docutils literal notranslate"><span class="pre">bool()</span></code></a> on the value to determine if the result is true or false.</p>
 <p>By default, <code class="docutils literal notranslate"><span class="pre">object</span></code> implements <a class="reference internal" href="#object.__eq__" title="object.__eq__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__eq__()</span></code></a> by using <code class="docutils literal notranslate"><span class="pre">is</span></code>, returning
-<code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> in the case of a false comparison:
+<a class="reference internal" href="../library/constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code></a> in the case of a false comparison:
 <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">if</span> <span class="pre">x</span> <span class="pre">is</span> <span class="pre">y</span> <span class="pre">else</span> <span class="pre">NotImplemented</span></code>. For <a class="reference internal" href="#object.__ne__" title="object.__ne__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__ne__()</span></code></a>, by default it
 delegates to <a class="reference internal" href="#object.__eq__" title="object.__eq__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__eq__()</span></code></a> and inverts the result unless it is
-<code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.  There are no other implied relationships among the
+<code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code>.  There are no other implied relationships among the
 comparison operators or default implementations; for example, the truth of
 <code class="docutils literal notranslate"><span class="pre">(x&lt;y</span> <span class="pre">or</span> <span class="pre">x==y)</span></code> does not imply <code class="docutils literal notranslate"><span class="pre">x&lt;=y</span></code>. To automatically generate ordering
 operations from a single root operation, see <a class="reference internal" href="../library/functools.html#functools.total_ordering" title="functools.total_ordering"><code class="xref py py-func docutils literal notranslate"><span class="pre">functools.total_ordering()</span></code></a>.</p>
@@ -1969,17 +1812,19 @@ left argument does not support the operation but the right argument does);
 rather, <a class="reference internal" href="#object.__lt__" title="object.__lt__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__lt__()</span></code></a> and <a class="reference internal" href="#object.__gt__" title="object.__gt__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__gt__()</span></code></a> are each other's reflection,
 <a class="reference internal" href="#object.__le__" title="object.__le__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__le__()</span></code></a> and <a class="reference internal" href="#object.__ge__" title="object.__ge__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__ge__()</span></code></a> are each other's reflection, and
 <a class="reference internal" href="#object.__eq__" title="object.__eq__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__eq__()</span></code></a> and <a class="reference internal" href="#object.__ne__" title="object.__ne__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__ne__()</span></code></a> are their own reflection.
-If the operands are of different types, and right operand's type is
+If the operands are of different types, and the right operand's type is
 a direct or indirect subclass of the left operand's type,
 the reflected method of the right operand has priority, otherwise
 the left operand's method has priority.  Virtual subclassing is
 not considered.</p>
+<p>When no appropriate method returns any value other than <a class="reference internal" href="../library/constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code></a>, the
+<code class="docutils literal notranslate"><span class="pre">==</span></code> and <code class="docutils literal notranslate"><span class="pre">!=</span></code> operators will fall back to <code class="docutils literal notranslate"><span class="pre">is</span></code> and <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">not</span></code>, respectively.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="object.__hash__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__hash__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__hash__" title="Link to this definition">¶</a></dt>
-<dd><p id="index-79">Called by built-in function <a class="reference internal" href="../library/functions.html#hash" title="hash"><code class="xref py py-func docutils literal notranslate"><span class="pre">hash()</span></code></a> and for operations on members of
+<dd><p id="index-80">Called by built-in function <a class="reference internal" href="../library/functions.html#hash" title="hash"><code class="xref py py-func docutils literal notranslate"><span class="pre">hash()</span></code></a> and for operations on members of
 hashed collections including <a class="reference internal" href="../library/stdtypes.html#set" title="set"><code class="xref py py-class docutils literal notranslate"><span class="pre">set</span></code></a>, <a class="reference internal" href="../library/stdtypes.html#frozenset" title="frozenset"><code class="xref py py-class docutils literal notranslate"><span class="pre">frozenset</span></code></a>, and
 <a class="reference internal" href="../library/stdtypes.html#dict" title="dict"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>.  The <code class="docutils literal notranslate"><span class="pre">__hash__()</span></code> method should return an integer. The only required
 property is that objects which compare equal have the same hash value; it is
@@ -2034,12 +1879,12 @@ remain constant within an individual Python process, they are not
 predictable between repeated invocations of Python.</p>
 <p>This is intended to provide protection against a denial-of-service caused
 by carefully chosen inputs that exploit the worst case performance of a
-dict insertion, O(n<sup>2</sup>) complexity.  See
+dict insertion, <em>O</em>(<em>n</em><sup>2</sup>) complexity.  See
 <a class="reference external" href="http://ocert.org/advisories/ocert-2011-003.html">http://ocert.org/advisories/ocert-2011-003.html</a> for details.</p>
 <p>Changing hash values affects the iteration order of sets.
 Python has never made guarantees about this ordering
 (and it typically varies between 32-bit and 64-bit builds).</p>
-<p>另請參閱 <span class="target" id="index-113"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONHASHSEED"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONHASHSEED</span></code></a>。</p>
+<p>另請參閱 <span class="target" id="index-114"></span><a class="reference internal" href="../using/cmdline.html#envvar-PYTHONHASHSEED"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONHASHSEED</span></code></a>。</p>
 </div>
 <div class="versionchanged">
 <p><span class="versionmodified changed">在 3.3 版的變更: </span>Hash randomization is enabled by default.</p>
@@ -2049,7 +1894,7 @@ Python has never made guarantees about this ordering
 <dl class="py method">
 <dt class="sig sig-object py" id="object.__bool__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__bool__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__bool__" title="Link to this definition">¶</a></dt>
-<dd><p id="index-81">Called to implement truth value testing and the built-in operation
+<dd><p id="index-82">Called to implement truth value testing and the built-in operation
 <code class="docutils literal notranslate"><span class="pre">bool()</span></code>; should return <code class="docutils literal notranslate"><span class="pre">False</span></code> or <code class="docutils literal notranslate"><span class="pre">True</span></code>.  When this method is not
 defined, <a class="reference internal" href="#object.__len__" title="object.__len__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__len__()</span></code></a> is called, if it is defined, and the object is
 considered true if its result is nonzero.  If a class defines neither
@@ -2126,13 +1971,13 @@ should only be implemented if <code class="docutils literal notranslate"><span c
 <dl class="py method">
 <dt class="sig sig-object py" id="object.__dir__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__dir__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__dir__" title="Link to this definition">¶</a></dt>
-<dd><p>Called when <a class="reference internal" href="../library/functions.html#dir" title="dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a> is called on the object. A sequence must be
-returned. <a class="reference internal" href="../library/functions.html#dir" title="dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a> converts the returned sequence to a list and sorts it.</p>
+<dd><p>Called when <a class="reference internal" href="../library/functions.html#dir" title="dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a> is called on the object. An iterable must be
+returned. <a class="reference internal" href="../library/functions.html#dir" title="dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a> converts the returned iterable to a list and sorts it.</p>
 </dd></dl>
 
 <section id="customizing-module-attribute-access">
 <h4><span class="section-number">3.3.2.1. </span>Customizing module attribute access<a class="headerlink" href="#customizing-module-attribute-access" title="Link to this heading">¶</a></h4>
-<p id="index-82">Special names <code class="docutils literal notranslate"><span class="pre">__getattr__</span></code> and <code class="docutils literal notranslate"><span class="pre">__dir__</span></code> can be also used to customize
+<p id="index-83">Special names <code class="docutils literal notranslate"><span class="pre">__getattr__</span></code> and <code class="docutils literal notranslate"><span class="pre">__dir__</span></code> can be also used to customize
 access to module attributes. The <code class="docutils literal notranslate"><span class="pre">__getattr__</span></code> function at the module level
 should accept one argument which is the name of an attribute and return the
 computed value or raise an <a class="reference internal" href="../library/exceptions.html#AttributeError" title="AttributeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AttributeError</span></code></a>. If an attribute is
@@ -2140,7 +1985,7 @@ not found on a module object through the normal lookup, i.e.
 <a class="reference internal" href="#object.__getattribute__" title="object.__getattribute__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">object.__getattribute__()</span></code></a>, then <code class="docutils literal notranslate"><span class="pre">__getattr__</span></code> is searched in
 the module <code class="docutils literal notranslate"><span class="pre">__dict__</span></code> before raising an <a class="reference internal" href="../library/exceptions.html#AttributeError" title="AttributeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AttributeError</span></code></a>. If found,
 it is called with the attribute name and the result is returned.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">__dir__</span></code> function should accept no arguments, and return a sequence of
+<p>The <code class="docutils literal notranslate"><span class="pre">__dir__</span></code> function should accept no arguments, and return an iterable of
 strings that represents the names accessible on module. If present, this
 function overrides the standard <a class="reference internal" href="../library/functions.html#dir" title="dir"><code class="xref py py-func docutils literal notranslate"><span class="pre">dir()</span></code></a> search on a module.</p>
 <p>For a more fine grained customization of the module behavior (setting
@@ -2176,7 +2021,7 @@ to the module's globals dictionary) is unaffected.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-114"></span><a class="pep reference external" href="https://peps.python.org/pep-0562/"><strong>PEP 562</strong></a> - 模組 __getattr__ 和 __dir__</dt><dd><p>Describes the <code class="docutils literal notranslate"><span class="pre">__getattr__</span></code> and <code class="docutils literal notranslate"><span class="pre">__dir__</span></code> functions on modules.</p>
+<dt><span class="target" id="index-115"></span><a class="pep reference external" href="https://peps.python.org/pep-0562/"><strong>PEP 562</strong></a> - 模組 __getattr__ 和 __dir__</dt><dd><p>Describes the <code class="docutils literal notranslate"><span class="pre">__getattr__</span></code> and <code class="docutils literal notranslate"><span class="pre">__dir__</span></code> functions on modules.</p>
 </dd>
 </dl>
 </div>
@@ -2199,7 +2044,7 @@ the attribute was accessed through, or <code class="docutils literal notranslate
 accessed through the <em>owner</em>.</p>
 <p>This method should return the computed attribute value or raise an
 <a class="reference internal" href="../library/exceptions.html#AttributeError" title="AttributeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">AttributeError</span></code></a> exception.</p>
-<p><span class="target" id="index-84"></span><a class="pep reference external" href="https://peps.python.org/pep-0252/"><strong>PEP 252</strong></a> specifies that <a class="reference internal" href="#object.__get__" title="object.__get__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__get__()</span></code></a> is callable with one or two
+<p><span class="target" id="index-85"></span><a class="pep reference external" href="https://peps.python.org/pep-0252/"><strong>PEP 252</strong></a> specifies that <a class="reference internal" href="#object.__get__" title="object.__get__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__get__()</span></code></a> is callable with one or two
 arguments.  Python's own built-in descriptors support this specification;
 however, it is likely that some third-party tools have descriptors
 that require both arguments.  Python's own <a class="reference internal" href="#object.__getattribute__" title="object.__getattribute__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getattribute__()</span></code></a>
@@ -2377,7 +2222,7 @@ class defining the method.</p>
 <em>cls</em> is then the new subclass. If defined as a normal instance method,
 this method is implicitly converted to a class method.</p>
 <p>Keyword arguments which are given to a new class are passed to
-the parent's class <code class="docutils literal notranslate"><span class="pre">__init_subclass__</span></code>. For compatibility with
+the parent class's <code class="docutils literal notranslate"><span class="pre">__init_subclass__</span></code>. For compatibility with
 other classes using <code class="docutils literal notranslate"><span class="pre">__init_subclass__</span></code>, one should take out the
 needed keyword arguments and pass the others over to the base
 class, as in:</p>
@@ -2434,7 +2279,7 @@ If needed, <a class="reference internal" href="#object.__set_name__" title="obje
 
 <section id="metaclasses">
 <span id="id12"></span><h4><span class="section-number">3.3.3.1. </span>Metaclasses<a class="headerlink" href="#metaclasses" title="Link to this heading">¶</a></h4>
-<p id="index-85">By default, classes are constructed using <a class="reference internal" href="../library/functions.html#type" title="type"><code class="xref py py-func docutils literal notranslate"><span class="pre">type()</span></code></a>. The class body is
+<p id="index-86">By default, classes are constructed using <a class="reference internal" href="../library/functions.html#type" title="type"><code class="xref py py-func docutils literal notranslate"><span class="pre">type()</span></code></a>. The class body is
 executed in a new namespace and the class name is bound locally to the
 result of <code class="docutils literal notranslate"><span class="pre">type(name,</span> <span class="pre">bases,</span> <span class="pre">namespace)</span></code>.</p>
 <p>The class creation process can be customized by passing the <code class="docutils literal notranslate"><span class="pre">metaclass</span></code>
@@ -2485,14 +2330,14 @@ empty: in these cases, the original base is ignored.</p>
 <dt><a class="reference internal" href="../library/types.html#types.get_original_bases" title="types.get_original_bases"><code class="xref py py-func docutils literal notranslate"><span class="pre">types.get_original_bases()</span></code></a></dt><dd><p>Retrieve a class's &quot;original bases&quot; prior to modifications by
 <a class="reference internal" href="#object.__mro_entries__" title="object.__mro_entries__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__mro_entries__()</span></code></a>.</p>
 </dd>
-<dt><span class="target" id="index-86"></span><a class="pep reference external" href="https://peps.python.org/pep-0560/"><strong>PEP 560</strong></a></dt><dd><p>Core support for typing module and generic types.</p>
+<dt><span class="target" id="index-87"></span><a class="pep reference external" href="https://peps.python.org/pep-0560/"><strong>PEP 560</strong></a></dt><dd><p>Core support for typing module and generic types.</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="determining-the-appropriate-metaclass">
 <h4><span class="section-number">3.3.3.3. </span>Determining the appropriate metaclass<a class="headerlink" href="#determining-the-appropriate-metaclass" title="Link to this heading">¶</a></h4>
-<p id="index-87">The appropriate metaclass for a class definition is determined as follows:</p>
+<p id="index-88">The appropriate metaclass for a class definition is determined as follows:</p>
 <ul class="simple">
 <li><p>if no bases and no explicit metaclass are given, then <a class="reference internal" href="../library/functions.html#type" title="type"><code class="xref py py-func docutils literal notranslate"><span class="pre">type()</span></code></a> is used;</p></li>
 <li><p>if an explicit metaclass is given and it is <em>not</em> an instance of
@@ -2508,7 +2353,7 @@ that criterion, then the class definition will fail with <code class="docutils l
 </section>
 <section id="preparing-the-class-namespace">
 <span id="prepare"></span><h4><span class="section-number">3.3.3.4. </span>Preparing the class namespace<a class="headerlink" href="#preparing-the-class-namespace" title="Link to this heading">¶</a></h4>
-<p id="index-88">Once the appropriate metaclass has been identified, then the class namespace
+<p id="index-89">Once the appropriate metaclass has been identified, then the class namespace
 is prepared. If the metaclass has a <code class="docutils literal notranslate"><span class="pre">__prepare__</span></code> attribute, it is called
 as <code class="docutils literal notranslate"><span class="pre">namespace</span> <span class="pre">=</span> <span class="pre">metaclass.__prepare__(name,</span> <span class="pre">bases,</span> <span class="pre">**kwds)</span></code> (where the
 additional keyword arguments, if any, come from the class definition). The
@@ -2521,14 +2366,14 @@ is initialised as an empty ordered mapping.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-89"></span><a class="pep reference external" href="https://peps.python.org/pep-3115/"><strong>PEP 3115</strong></a> - Metaclasses in Python 3000</dt><dd><p>Introduced the <code class="docutils literal notranslate"><span class="pre">__prepare__</span></code> namespace hook</p>
+<dt><span class="target" id="index-90"></span><a class="pep reference external" href="https://peps.python.org/pep-3115/"><strong>PEP 3115</strong></a> - Metaclasses in Python 3000</dt><dd><p>Introduced the <code class="docutils literal notranslate"><span class="pre">__prepare__</span></code> namespace hook</p>
 </dd>
 </dl>
 </div>
 </section>
 <section id="executing-the-class-body">
 <h4><span class="section-number">3.3.3.5. </span>Executing the class body<a class="headerlink" href="#executing-the-class-body" title="Link to this heading">¶</a></h4>
-<p id="index-90">The class body is executed (approximately) as
+<p id="index-91">The class body is executed (approximately) as
 <code class="docutils literal notranslate"><span class="pre">exec(body,</span> <span class="pre">globals(),</span> <span class="pre">namespace)</span></code>. The key difference from a normal
 call to <a class="reference internal" href="../library/functions.html#exec" title="exec"><code class="xref py py-func docutils literal notranslate"><span class="pre">exec()</span></code></a> is that lexical scoping allows the class body (including
 any methods) to reference names from the current and outer scopes when the
@@ -2541,7 +2386,7 @@ described in the next section.</p>
 </section>
 <section id="creating-the-class-object">
 <span id="class-object-creation"></span><h4><span class="section-number">3.3.3.6. </span>Creating the class object<a class="headerlink" href="#creating-the-class-object" title="Link to this heading">¶</a></h4>
-<p id="index-91">Once the class namespace has been populated by executing the class body,
+<p id="index-92">Once the class namespace has been populated by executing the class body,
 the class object is created by calling
 <code class="docutils literal notranslate"><span class="pre">metaclass(name,</span> <span class="pre">bases,</span> <span class="pre">namespace,</span> <span class="pre">**kwds)</span></code> (the additional keywords
 passed here are the same as those passed to <code class="docutils literal notranslate"><span class="pre">__prepare__</span></code>).</p>
@@ -2580,7 +2425,7 @@ becomes the <a class="reference internal" href="../library/stdtypes.html#object.
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-92"></span><a class="pep reference external" href="https://peps.python.org/pep-3135/"><strong>PEP 3135</strong></a> - New super</dt><dd><p>Describes the implicit <code class="docutils literal notranslate"><span class="pre">__class__</span></code> closure reference</p>
+<dt><span class="target" id="index-93"></span><a class="pep reference external" href="https://peps.python.org/pep-3135/"><strong>PEP 3135</strong></a> - New super</dt><dd><p>Describes the implicit <code class="docutils literal notranslate"><span class="pre">__class__</span></code> closure reference</p>
 </dd>
 </dl>
 </div>
@@ -2624,7 +2469,7 @@ case the instance is itself a class.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-93"></span><a class="pep reference external" href="https://peps.python.org/pep-3119/"><strong>PEP 3119</strong></a> - Introducing Abstract Base Classes</dt><dd><p>Includes the specification for customizing <a class="reference internal" href="../library/functions.html#isinstance" title="isinstance"><code class="xref py py-func docutils literal notranslate"><span class="pre">isinstance()</span></code></a> and
+<dt><span class="target" id="index-94"></span><a class="pep reference external" href="https://peps.python.org/pep-3119/"><strong>PEP 3119</strong></a> - Introducing Abstract Base Classes</dt><dd><p>Includes the specification for customizing <a class="reference internal" href="../library/functions.html#isinstance" title="isinstance"><code class="xref py py-func docutils literal notranslate"><span class="pre">isinstance()</span></code></a> and
 <a class="reference internal" href="../library/functions.html#issubclass" title="issubclass"><code class="xref py py-func docutils literal notranslate"><span class="pre">issubclass()</span></code></a> behavior through <a class="reference internal" href="#class.__instancecheck__" title="class.__instancecheck__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__instancecheck__()</span></code></a> and
 <a class="reference internal" href="#class.__subclasscheck__" title="class.__subclasscheck__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__subclasscheck__()</span></code></a>, with motivation for this functionality
 in the context of adding Abstract Base Classes (see the <a class="reference internal" href="../library/abc.html#module-abc" title="abc: Abstract base classes according to :pep:`3119`."><code class="xref py py-mod docutils literal notranslate"><span class="pre">abc</span></code></a>
@@ -2642,9 +2487,9 @@ For example, the annotation <code class="docutils literal notranslate"><span cla
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-94"></span><a class="pep reference external" href="https://peps.python.org/pep-0484/"><strong>PEP 484</strong></a> - Type Hints</dt><dd><p>Introducing Python's framework for type annotations</p>
+<dt><span class="target" id="index-95"></span><a class="pep reference external" href="https://peps.python.org/pep-0484/"><strong>PEP 484</strong></a> - Type Hints</dt><dd><p>Introducing Python's framework for type annotations</p>
 </dd>
-<dt><a class="reference internal" href="../library/stdtypes.html#types-genericalias"><span class="std std-ref">Generic Alias Types</span></a></dt><dd><p>Documentation for objects representing parameterized generic classes</p>
+<dt><a class="reference internal" href="../library/stdtypes.html#types-genericalias"><span class="std std-ref">泛型別名型別</span></a></dt><dd><p>Documentation for objects representing parameterized generic classes</p>
 </dd>
 <dt><a class="reference internal" href="../library/typing.html#generics"><span class="std std-ref">泛型</span></a>, <a class="reference internal" href="../library/typing.html#user-defined-generics"><span class="std std-ref">user-defined generics</span></a> and <a class="reference internal" href="../library/typing.html#typing.Generic" title="typing.Generic"><code class="xref py py-class docutils literal notranslate"><span class="pre">typing.Generic</span></code></a></dt><dd><p>Documentation on how to implement generic classes that can be
 parameterized at runtime and understood by static type-checkers.</p>
@@ -2757,7 +2602,7 @@ behaviour. An example of this can be found in the <a class="reference internal" 
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-95"></span><a class="pep reference external" href="https://peps.python.org/pep-0560/"><strong>PEP 560</strong></a> - Core Support for typing module and generic types</dt><dd><p>Introducing <a class="reference internal" href="#object.__class_getitem__" title="object.__class_getitem__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__class_getitem__()</span></code></a>, and outlining when a
+<dt><span class="target" id="index-96"></span><a class="pep reference external" href="https://peps.python.org/pep-0560/"><strong>PEP 560</strong></a> - Core Support for typing module and generic types</dt><dd><p>Introducing <a class="reference internal" href="#object.__class_getitem__" title="object.__class_getitem__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__class_getitem__()</span></code></a>, and outlining when a
 <a class="reference internal" href="expressions.html#subscriptions"><span class="std std-ref">subscription</span></a> results in <code class="docutils literal notranslate"><span class="pre">__class_getitem__()</span></code>
 being called instead of <a class="reference internal" href="#object.__getitem__" title="object.__getitem__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__getitem__()</span></code></a></p>
 </dd>
@@ -2770,7 +2615,7 @@ being called instead of <a class="reference internal" href="#object.__getitem__"
 <dl class="py method">
 <dt class="sig sig-object py" id="object.__call__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">args...</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#object.__call__" title="Link to this definition">¶</a></dt>
-<dd><p id="index-96">Called when the instance is &quot;called&quot; as a function; if this method is defined,
+<dd><p id="index-97">Called when the instance is &quot;called&quot; as a function; if this method is defined,
 <code class="docutils literal notranslate"><span class="pre">x(arg1,</span> <span class="pre">arg2,</span> <span class="pre">...)</span></code> roughly translates to <code class="docutils literal notranslate"><span class="pre">type(x).__call__(x,</span> <span class="pre">arg1,</span> <span class="pre">...)</span></code>.</p>
 </dd></dl>
 
@@ -2814,7 +2659,7 @@ through the object's keys; for sequences, it should iterate through the values.<
 <dl class="py method">
 <dt class="sig sig-object py" id="object.__len__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__len__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__len__" title="Link to this definition">¶</a></dt>
-<dd><p id="index-97">Called to implement the built-in function <a class="reference internal" href="../library/functions.html#len" title="len"><code class="xref py py-func docutils literal notranslate"><span class="pre">len()</span></code></a>.  Should return the length
+<dd><p id="index-98">Called to implement the built-in function <a class="reference internal" href="../library/functions.html#len" title="len"><code class="xref py py-func docutils literal notranslate"><span class="pre">len()</span></code></a>.  Should return the length
 of the object, an integer <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> 0.  Also, an object that doesn't define a
 <a class="reference internal" href="#object.__bool__" title="object.__bool__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__bool__()</span></code></a> method and whose <code class="xref py py-meth docutils literal notranslate"><span class="pre">__len__()</span></code> method returns zero is
 considered to be false in a Boolean context.</p>
@@ -2833,7 +2678,7 @@ If the length is larger than <code class="xref py py-data docutils literal notra
 <dd><p>Called to implement <a class="reference internal" href="../library/operator.html#operator.length_hint" title="operator.length_hint"><code class="xref py py-func docutils literal notranslate"><span class="pre">operator.length_hint()</span></code></a>. Should return an estimated
 length for the object (which may be greater or less than the actual length).
 The length must be an integer <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> 0. The return value may also be
-<a class="reference internal" href="../library/constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-const docutils literal notranslate"><span class="pre">NotImplemented</span></code></a>, which is treated the same as if the
+<a class="reference internal" href="../library/constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code></a>, which is treated the same as if the
 <code class="docutils literal notranslate"><span class="pre">__length_hint__</span></code> method didn't exist at all. This method is purely an
 optimization and is never required for correctness.</p>
 <div class="versionadded">
@@ -2841,7 +2686,7 @@ optimization and is never required for correctness.</p>
 </div>
 </dd></dl>
 
-<div class="admonition note" id="index-98">
+<div class="admonition note" id="index-99">
 <p class="admonition-title">備註</p>
 <p>Slicing is done exclusively with the following three methods.  A call like</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span>
@@ -2980,7 +2825,7 @@ left undefined.</p>
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__xor__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__xor__" title="Link to this definition">¶</a></dt>
 <dt class="sig sig-object py" id="object.__or__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__or__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__or__" title="Link to this definition">¶</a></dt>
-<dd><p id="index-99">These methods are called to implement the binary arithmetic operations
+<dd><p id="index-100">These methods are called to implement the binary arithmetic operations
 (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, <a class="reference internal" href="../library/functions.html#divmod" title="divmod"><code class="xref py py-func docutils literal notranslate"><span class="pre">divmod()</span></code></a>,
 <a class="reference internal" href="../library/functions.html#pow" title="pow"><code class="xref py py-func docutils literal notranslate"><span class="pre">pow()</span></code></a>, <code class="docutils literal notranslate"><span class="pre">**</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">^</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>).  For instance, to
 evaluate the expression <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>, where <em>x</em> is an instance of a class that
@@ -2991,7 +2836,7 @@ has an <a class="reference internal" href="#object.__add__" title="object.__add_
 an optional third argument if the ternary version of the built-in <a class="reference internal" href="../library/functions.html#pow" title="pow"><code class="xref py py-func docutils literal notranslate"><span class="pre">pow()</span></code></a>
 function is to be supported.</p>
 <p>If one of those methods does not support the operation with the supplied
-arguments, it should return <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.</p>
+arguments, it should return <a class="reference internal" href="../library/constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -3023,7 +2868,7 @@ arguments, it should return <code class="docutils literal notranslate"><span cla
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__rxor__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__rxor__" title="Link to this definition">¶</a></dt>
 <dt class="sig sig-object py" id="object.__ror__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__ror__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__ror__" title="Link to this definition">¶</a></dt>
-<dd><p id="index-100">These methods are called to implement the binary arithmetic operations
+<dd><p id="index-101">These methods are called to implement the binary arithmetic operations
 (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, <a class="reference internal" href="../library/functions.html#divmod" title="divmod"><code class="xref py py-func docutils literal notranslate"><span class="pre">divmod()</span></code></a>,
 <a class="reference internal" href="../library/functions.html#pow" title="pow"><code class="xref py py-func docutils literal notranslate"><span class="pre">pow()</span></code></a>, <code class="docutils literal notranslate"><span class="pre">**</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">^</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code>) with reflected
 (swapped) operands.  These functions are only called if the left operand does
@@ -3031,8 +2876,8 @@ not support the corresponding operation <a class="footnote-reference brackets" h
 types. <a class="footnote-reference brackets" href="#id20" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> For instance, to evaluate the expression <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-</span> <span class="pre">y</span></code>, where <em>y</em> is
 an instance of a class that has an <a class="reference internal" href="#object.__rsub__" title="object.__rsub__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__rsub__()</span></code></a> method,
 <code class="docutils literal notranslate"><span class="pre">type(y).__rsub__(y,</span> <span class="pre">x)</span></code> is called if <code class="docutils literal notranslate"><span class="pre">type(x).__sub__(x,</span> <span class="pre">y)</span></code> returns
-<em>NotImplemented</em>.</p>
-<p id="index-101">Note that ternary <a class="reference internal" href="../library/functions.html#pow" title="pow"><code class="xref py py-func docutils literal notranslate"><span class="pre">pow()</span></code></a> will not try calling <a class="reference internal" href="#object.__rpow__" title="object.__rpow__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__rpow__()</span></code></a> (the
+<a class="reference internal" href="../library/constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code></a>.</p>
+<p id="index-102">Note that ternary <a class="reference internal" href="../library/functions.html#pow" title="pow"><code class="xref py py-func docutils literal notranslate"><span class="pre">pow()</span></code></a> will not try calling <a class="reference internal" href="#object.__rpow__" title="object.__rpow__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__rpow__()</span></code></a> (the
 coercion rules would become too complicated).</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
@@ -3075,10 +2920,12 @@ ancestors' operations.</p>
 (<code class="docutils literal notranslate"><span class="pre">+=</span></code>, <code class="docutils literal notranslate"><span class="pre">-=</span></code>, <code class="docutils literal notranslate"><span class="pre">*=</span></code>, <code class="docutils literal notranslate"><span class="pre">&#64;=</span></code>, <code class="docutils literal notranslate"><span class="pre">/=</span></code>, <code class="docutils literal notranslate"><span class="pre">//=</span></code>, <code class="docutils literal notranslate"><span class="pre">%=</span></code>, <code class="docutils literal notranslate"><span class="pre">**=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;&lt;=</span></code>,
 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;=</span></code>, <code class="docutils literal notranslate"><span class="pre">^=</span></code>, <code class="docutils literal notranslate"><span class="pre">|=</span></code>).  These methods should attempt to do the
 operation in-place (modifying <em>self</em>) and return the result (which could be,
-but does not have to be, <em>self</em>).  If a specific method is not defined, the
+but does not have to be, <em>self</em>).  If a specific method is not defined, or if
+that method returns <a class="reference internal" href="../library/constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code></a>, the
 augmented assignment falls back to the normal methods.  For instance, if <em>x</em>
 is an instance of a class with an <a class="reference internal" href="#object.__iadd__" title="object.__iadd__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__iadd__()</span></code></a> method, <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">y</span></code> is
-equivalent to <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x.__iadd__(y)</span></code> . Otherwise, <code class="docutils literal notranslate"><span class="pre">x.__add__(y)</span></code> and
+equivalent to <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x.__iadd__(y)</span></code> . If <a class="reference internal" href="#object.__iadd__" title="object.__iadd__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__iadd__()</span></code></a> does not exist, or if <code class="docutils literal notranslate"><span class="pre">x.__iadd__(y)</span></code>
+returns <code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code>, <code class="docutils literal notranslate"><span class="pre">x.__add__(y)</span></code> and
 <code class="docutils literal notranslate"><span class="pre">y.__radd__(x)</span></code> are considered, as with the evaluation of <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code>. In
 certain situations, augmented assignment can result in unexpected errors (see
 <a class="reference internal" href="../faq/programming.html#faq-augmented-assignment-tuple-error"><span class="std std-ref">Why does a_tuple[i] += ['item'] raise an exception when the addition works?</span></a>), but this behavior is in fact
@@ -3094,7 +2941,7 @@ part of the data model.</p>
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__abs__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__abs__" title="Link to this definition">¶</a></dt>
 <dt class="sig sig-object py" id="object.__invert__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__invert__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__invert__" title="Link to this definition">¶</a></dt>
-<dd><p id="index-102">Called to implement the unary arithmetic operations (<code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <a class="reference internal" href="../library/functions.html#abs" title="abs"><code class="xref py py-func docutils literal notranslate"><span class="pre">abs()</span></code></a>
+<dd><p id="index-103">Called to implement the unary arithmetic operations (<code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">+</span></code>, <a class="reference internal" href="../library/functions.html#abs" title="abs"><code class="xref py py-func docutils literal notranslate"><span class="pre">abs()</span></code></a>
 and <code class="docutils literal notranslate"><span class="pre">~</span></code>).</p>
 </dd></dl>
 
@@ -3105,7 +2952,7 @@ and <code class="docutils literal notranslate"><span class="pre">~</span></code>
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__int__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__int__" title="Link to this definition">¶</a></dt>
 <dt class="sig sig-object py" id="object.__float__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__float__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__float__" title="Link to this definition">¶</a></dt>
-<dd><p id="index-103">Called to implement the built-in functions <a class="reference internal" href="../library/functions.html#complex" title="complex"><code class="xref py py-func docutils literal notranslate"><span class="pre">complex()</span></code></a>,
+<dd><p id="index-104">Called to implement the built-in functions <a class="reference internal" href="../library/functions.html#complex" title="complex"><code class="xref py py-func docutils literal notranslate"><span class="pre">complex()</span></code></a>,
 <a class="reference internal" href="../library/functions.html#int" title="int"><code class="xref py py-func docutils literal notranslate"><span class="pre">int()</span></code></a> and <a class="reference internal" href="../library/functions.html#float" title="float"><code class="xref py py-func docutils literal notranslate"><span class="pre">float()</span></code></a>.  Should return a value
 of the appropriate type.</p>
 </dd></dl>
@@ -3132,7 +2979,7 @@ and <a class="reference internal" href="../library/functions.html#complex" title
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__floor__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__floor__" title="Link to this definition">¶</a></dt>
 <dt class="sig sig-object py" id="object.__ceil__">
 <span class="sig-prename descclassname"><span class="pre">object.</span></span><span class="sig-name descname"><span class="pre">__ceil__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#object.__ceil__" title="Link to this definition">¶</a></dt>
-<dd><p id="index-104">Called to implement the built-in function <a class="reference internal" href="../library/functions.html#round" title="round"><code class="xref py py-func docutils literal notranslate"><span class="pre">round()</span></code></a> and <a class="reference internal" href="../library/math.html#module-math" title="math: Mathematical functions (sin() etc.)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code></a>
+<dd><p id="index-105">Called to implement the built-in function <a class="reference internal" href="../library/functions.html#round" title="round"><code class="xref py py-func docutils literal notranslate"><span class="pre">round()</span></code></a> and <a class="reference internal" href="../library/math.html#module-math" title="math: Mathematical functions (sin() etc.)."><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code></a>
 functions <a class="reference internal" href="../library/math.html#math.trunc" title="math.trunc"><code class="xref py py-func docutils literal notranslate"><span class="pre">trunc()</span></code></a>, <a class="reference internal" href="../library/math.html#math.floor" title="math.floor"><code class="xref py py-func docutils literal notranslate"><span class="pre">floor()</span></code></a> and <a class="reference internal" href="../library/math.html#math.ceil" title="math.ceil"><code class="xref py py-func docutils literal notranslate"><span class="pre">ceil()</span></code></a>.
 Unless <em>ndigits</em> is passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">__round__()</span></code> all these methods should
 return the value of the object truncated to an <a class="reference internal" href="../library/numbers.html#numbers.Integral" title="numbers.Integral"><code class="xref py py-class docutils literal notranslate"><span class="pre">Integral</span></code></a>
@@ -3153,7 +3000,7 @@ handles the entry into, and the exit from, the desired runtime context for the
 execution of the block of code.  Context managers are normally invoked using the
 <code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code> statement (described in section <a class="reference internal" href="compound_stmts.html#with"><span class="std std-ref">The with statement</span></a>), but can also be
 used by directly invoking their methods.</p>
-<p id="index-105">Typical uses of context managers include saving and restoring various kinds of
+<p id="index-106">Typical uses of context managers include saving and restoring various kinds of
 global state, locking and unlocking resources, closing opened files, etc.</p>
 <p>For more information on context managers, see <a class="reference internal" href="../library/stdtypes.html#typecontextmanager"><span class="std std-ref">Context Manager Types</span></a>.</p>
 <dl class="py method">
@@ -3180,7 +3027,7 @@ this is the caller's responsibility.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-106"></span><a class="pep reference external" href="https://peps.python.org/pep-0343/"><strong>PEP 343</strong></a> - The &quot;with&quot; statement</dt><dd><p>The specification, background, and examples for the Python <a class="reference internal" href="compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a>
+<dt><span class="target" id="index-107"></span><a class="pep reference external" href="https://peps.python.org/pep-0343/"><strong>PEP 343</strong></a> - The &quot;with&quot; statement</dt><dd><p>The specification, background, and examples for the Python <a class="reference internal" href="compound_stmts.html#with"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">with</span></code></a>
 statement.</p>
 </dd>
 </dl>
@@ -3213,7 +3060,7 @@ a <a class="reference internal" href="../library/exceptions.html#TypeError" titl
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-107"></span><a class="pep reference external" href="https://peps.python.org/pep-0634/"><strong>PEP 634</strong></a> - Structural Pattern Matching</dt><dd><p>The specification for the Python <code class="docutils literal notranslate"><span class="pre">match</span></code> statement.</p>
+<dt><span class="target" id="index-108"></span><a class="pep reference external" href="https://peps.python.org/pep-0634/"><strong>PEP 634</strong></a> - Structural Pattern Matching</dt><dd><p>The specification for the Python <code class="docutils literal notranslate"><span class="pre">match</span></code> statement.</p>
 </dd>
 </dl>
 </div>
@@ -3254,7 +3101,7 @@ to implement this method.</p>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
 <dl class="simple">
-<dt><span class="target" id="index-108"></span><a class="pep reference external" href="https://peps.python.org/pep-0688/"><strong>PEP 688</strong></a> - Making the buffer protocol accessible in Python</dt><dd><p>Introduces the Python <code class="docutils literal notranslate"><span class="pre">__buffer__</span></code> and <code class="docutils literal notranslate"><span class="pre">__release_buffer__</span></code> methods.</p>
+<dt><span class="target" id="index-109"></span><a class="pep reference external" href="https://peps.python.org/pep-0688/"><strong>PEP 688</strong></a> - Making the buffer protocol accessible in Python</dt><dd><p>Introduces the Python <code class="docutils literal notranslate"><span class="pre">__buffer__</span></code> and <code class="docutils literal notranslate"><span class="pre">__release_buffer__</span></code> methods.</p>
 </dd>
 <dt><a class="reference internal" href="../library/collections.abc.html#collections.abc.Buffer" title="collections.abc.Buffer"><code class="xref py py-class docutils literal notranslate"><span class="pre">collections.abc.Buffer</span></code></a></dt><dd><p>ABC for buffer types.</p>
 </dd>
@@ -3335,7 +3182,7 @@ object itself in order to be consistently invoked by the interpreter).</p>
 </section>
 </section>
 <section id="coroutines">
-<span id="index-109"></span><h2><span class="section-number">3.4. </span>協程<a class="headerlink" href="#coroutines" title="Link to this heading">¶</a></h2>
+<span id="index-110"></span><h2><span class="section-number">3.4. </span>協程<a class="headerlink" href="#coroutines" title="Link to this heading">¶</a></h2>
 <section id="awaitable-objects">
 <h3><span class="section-number">3.4.1. </span>Awaitable Objects<a class="headerlink" href="#awaitable-objects" title="Link to this heading">¶</a></h3>
 <p>An <a class="reference internal" href="../glossary.html#term-awaitable"><span class="xref std std-term">awaitable</span></a> object generally implements an <a class="reference internal" href="#object.__await__" title="object.__await__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__await__()</span></code></a> method.
@@ -3367,7 +3214,7 @@ specific to the implementation of the asynchronous execution framework
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">也參考</p>
-<p><span class="target" id="index-110"></span><a class="pep reference external" href="https://peps.python.org/pep-0492/"><strong>PEP 492</strong></a> for additional information about awaitable objects.</p>
+<p><span class="target" id="index-111"></span><a class="pep reference external" href="https://peps.python.org/pep-0492/"><strong>PEP 492</strong></a> for additional information about awaitable objects.</p>
 </div>
 </section>
 <section id="coroutine-objects">
@@ -3526,7 +3373,7 @@ the behavior that <code class="docutils literal notranslate"><span class="pre">N
 <aside class="footnote brackets" id="id19" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">3</a><span class="fn-bracket">]</span></span>
 <p>&quot;Does not support&quot; here means that the class has no such method, or
-the method returns <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>.  Do not set the method to
+the method returns <a class="reference internal" href="../library/constants.html#NotImplemented" title="NotImplemented"><code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code></a>.  Do not set the method to
 <code class="docutils literal notranslate"><span class="pre">None</span></code> if you want to force fallback to the right operand's reflected
 method—that will instead have the opposite effect of explicitly
 <em>blocking</em> such fallback.</p>
@@ -3553,7 +3400,7 @@ supported, which is why the reflected method is not called.</p>
   <div>
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
-<li><a class="reference internal" href="#">3. Data model</a><ul>
+<li><a class="reference internal" href="#">3. 資料模型</a><ul>
 <li><a class="reference internal" href="#objects-values-and-types">3.1. Objects, values and types</a></li>
 <li><a class="reference internal" href="#the-standard-type-hierarchy">3.2. 標準型別階層</a><ul>
 <li><a class="reference internal" href="#none">3.2.1. None</a></li>
@@ -3576,35 +3423,12 @@ supported, which is why the reflected method is not called.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#callable-types">3.2.8. Callable types</a><ul>
-<li><a class="reference internal" href="#user-defined-functions">3.2.8.1. User-defined functions</a><ul>
-<li><a class="reference internal" href="#special-read-only-attributes">3.2.8.1.1. Special read-only attributes</a><ul>
-<li><a class="reference internal" href="#function.__globals__"><code class="docutils literal notranslate"><span class="pre">function.__globals__</span></code></a></li>
-<li><a class="reference internal" href="#function.__closure__"><code class="docutils literal notranslate"><span class="pre">function.__closure__</span></code></a></li>
+<li><a class="reference internal" href="#user-defined-functions">3.2.8.1. 自訂函式</a><ul>
+<li><a class="reference internal" href="#special-read-only-attributes">3.2.8.1.1. 特殊唯讀屬性</a></li>
+<li><a class="reference internal" href="#special-writable-attributes">3.2.8.1.2. 特殊可寫屬性</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#special-writable-attributes">3.2.8.1.2. 特殊可寫屬性</a><ul>
-<li><a class="reference internal" href="#function.__doc__"><code class="docutils literal notranslate"><span class="pre">function.__doc__</span></code></a></li>
-<li><a class="reference internal" href="#function.__name__"><code class="docutils literal notranslate"><span class="pre">function.__name__</span></code></a></li>
-<li><a class="reference internal" href="#function.__qualname__"><code class="docutils literal notranslate"><span class="pre">function.__qualname__</span></code></a></li>
-<li><a class="reference internal" href="#function.__module__"><code class="docutils literal notranslate"><span class="pre">function.__module__</span></code></a></li>
-<li><a class="reference internal" href="#function.__defaults__"><code class="docutils literal notranslate"><span class="pre">function.__defaults__</span></code></a></li>
-<li><a class="reference internal" href="#function.__code__"><code class="docutils literal notranslate"><span class="pre">function.__code__</span></code></a></li>
-<li><a class="reference internal" href="#function.__dict__"><code class="docutils literal notranslate"><span class="pre">function.__dict__</span></code></a></li>
-<li><a class="reference internal" href="#function.__annotations__"><code class="docutils literal notranslate"><span class="pre">function.__annotations__</span></code></a></li>
-<li><a class="reference internal" href="#function.__kwdefaults__"><code class="docutils literal notranslate"><span class="pre">function.__kwdefaults__</span></code></a></li>
-<li><a class="reference internal" href="#function.__type_params__"><code class="docutils literal notranslate"><span class="pre">function.__type_params__</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#instance-methods">3.2.8.2. Instance methods</a><ul>
-<li><a class="reference internal" href="#method.__self__"><code class="docutils literal notranslate"><span class="pre">method.__self__</span></code></a></li>
-<li><a class="reference internal" href="#method.__func__"><code class="docutils literal notranslate"><span class="pre">method.__func__</span></code></a></li>
-<li><a class="reference internal" href="#method.__doc__"><code class="docutils literal notranslate"><span class="pre">method.__doc__</span></code></a></li>
-<li><a class="reference internal" href="#method.__name__"><code class="docutils literal notranslate"><span class="pre">method.__name__</span></code></a></li>
-<li><a class="reference internal" href="#method.__module__"><code class="docutils literal notranslate"><span class="pre">method.__module__</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#instance-methods">3.2.8.2. Instance methods</a></li>
 <li><a class="reference internal" href="#generator-functions">3.2.8.3. Generator functions</a></li>
 <li><a class="reference internal" href="#coroutine-functions">3.2.8.4. Coroutine functions</a></li>
 <li><a class="reference internal" href="#asynchronous-generator-functions">3.2.8.5. Asynchronous generator functions</a></li>
@@ -3620,66 +3444,18 @@ supported, which is why the reflected method is not called.</p>
 <li><a class="reference internal" href="#i-o-objects-also-known-as-file-objects">3.2.12. I/O objects (also known as file objects)</a></li>
 <li><a class="reference internal" href="#internal-types">3.2.13. Internal types</a><ul>
 <li><a class="reference internal" href="#code-objects">3.2.13.1. Code objects</a><ul>
-<li><a class="reference internal" href="#index-58">3.2.13.1.1. Special read-only attributes</a><ul>
-<li><a class="reference internal" href="#codeobject.co_name"><code class="docutils literal notranslate"><span class="pre">codeobject.co_name</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_qualname"><code class="docutils literal notranslate"><span class="pre">codeobject.co_qualname</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_argcount"><code class="docutils literal notranslate"><span class="pre">codeobject.co_argcount</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_posonlyargcount"><code class="docutils literal notranslate"><span class="pre">codeobject.co_posonlyargcount</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_kwonlyargcount"><code class="docutils literal notranslate"><span class="pre">codeobject.co_kwonlyargcount</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_nlocals"><code class="docutils literal notranslate"><span class="pre">codeobject.co_nlocals</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_varnames"><code class="docutils literal notranslate"><span class="pre">codeobject.co_varnames</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_cellvars"><code class="docutils literal notranslate"><span class="pre">codeobject.co_cellvars</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_freevars"><code class="docutils literal notranslate"><span class="pre">codeobject.co_freevars</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_code"><code class="docutils literal notranslate"><span class="pre">codeobject.co_code</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_consts"><code class="docutils literal notranslate"><span class="pre">codeobject.co_consts</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_names"><code class="docutils literal notranslate"><span class="pre">codeobject.co_names</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_filename"><code class="docutils literal notranslate"><span class="pre">codeobject.co_filename</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_firstlineno"><code class="docutils literal notranslate"><span class="pre">codeobject.co_firstlineno</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_lnotab"><code class="docutils literal notranslate"><span class="pre">codeobject.co_lnotab</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_stacksize"><code class="docutils literal notranslate"><span class="pre">codeobject.co_stacksize</span></code></a></li>
-<li><a class="reference internal" href="#codeobject.co_flags"><code class="docutils literal notranslate"><span class="pre">codeobject.co_flags</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#the-co-positions-method">3.2.13.1.2. The <code class="xref py py-meth docutils literal notranslate"><span class="pre">co_positions()</span></code> method</a><ul>
-<li><a class="reference internal" href="#codeobject.co_positions"><code class="docutils literal notranslate"><span class="pre">codeobject.co_positions()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#index-58">3.2.13.1.1. 特殊唯讀屬性</a></li>
+<li><a class="reference internal" href="#methods-on-code-objects">3.2.13.1.2. 用於程式碼物件的方法</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#frame-objects">3.2.13.2. Frame objects</a><ul>
-<li><a class="reference internal" href="#index-63">3.2.13.2.1. Special read-only attributes</a><ul>
-<li><a class="reference internal" href="#frame.f_back"><code class="docutils literal notranslate"><span class="pre">frame.f_back</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_code"><code class="docutils literal notranslate"><span class="pre">frame.f_code</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_locals"><code class="docutils literal notranslate"><span class="pre">frame.f_locals</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_globals"><code class="docutils literal notranslate"><span class="pre">frame.f_globals</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_builtins"><code class="docutils literal notranslate"><span class="pre">frame.f_builtins</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_lasti"><code class="docutils literal notranslate"><span class="pre">frame.f_lasti</span></code></a></li>
+<li><a class="reference internal" href="#index-64">3.2.13.2.1. 特殊唯讀屬性</a></li>
+<li><a class="reference internal" href="#index-65">3.2.13.2.2. 特殊可寫屬性</a></li>
+<li><a class="reference internal" href="#frame-object-methods">3.2.13.2.3. Frame object methods</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#index-64">3.2.13.2.2. 特殊可寫屬性</a><ul>
-<li><a class="reference internal" href="#frame.f_trace"><code class="docutils literal notranslate"><span class="pre">frame.f_trace</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_trace_lines"><code class="docutils literal notranslate"><span class="pre">frame.f_trace_lines</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_trace_opcodes"><code class="docutils literal notranslate"><span class="pre">frame.f_trace_opcodes</span></code></a></li>
-<li><a class="reference internal" href="#frame.f_lineno"><code class="docutils literal notranslate"><span class="pre">frame.f_lineno</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#frame-object-methods">3.2.13.2.3. Frame object methods</a><ul>
-<li><a class="reference internal" href="#frame.clear"><code class="docutils literal notranslate"><span class="pre">frame.clear()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#traceback-objects">3.2.13.3. Traceback objects</a><ul>
-<li><a class="reference internal" href="#traceback.tb_frame"><code class="docutils literal notranslate"><span class="pre">traceback.tb_frame</span></code></a></li>
-<li><a class="reference internal" href="#traceback.tb_lineno"><code class="docutils literal notranslate"><span class="pre">traceback.tb_lineno</span></code></a></li>
-<li><a class="reference internal" href="#traceback.tb_lasti"><code class="docutils literal notranslate"><span class="pre">traceback.tb_lasti</span></code></a></li>
-<li><a class="reference internal" href="#traceback.tb_next"><code class="docutils literal notranslate"><span class="pre">traceback.tb_next</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#slice-objects">3.2.13.4. Slice objects</a><ul>
-<li><a class="reference internal" href="#slice.indices"><code class="docutils literal notranslate"><span class="pre">slice.indices()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#traceback-objects">3.2.13.3. Traceback objects</a></li>
+<li><a class="reference internal" href="#slice-objects">3.2.13.4. Slice objects</a></li>
 <li><a class="reference internal" href="#static-method-objects">3.2.13.5. Static method objects</a></li>
 <li><a class="reference internal" href="#class-method-objects">3.2.13.6. Class method objects</a></li>
 </ul>
@@ -3687,53 +3463,17 @@ supported, which is why the reflected method is not called.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#special-method-names">3.3. Special method names</a><ul>
-<li><a class="reference internal" href="#basic-customization">3.3.1. Basic customization</a><ul>
-<li><a class="reference internal" href="#object.__new__"><code class="docutils literal notranslate"><span class="pre">object.__new__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__init__"><code class="docutils literal notranslate"><span class="pre">object.__init__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__del__"><code class="docutils literal notranslate"><span class="pre">object.__del__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__repr__"><code class="docutils literal notranslate"><span class="pre">object.__repr__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__str__"><code class="docutils literal notranslate"><span class="pre">object.__str__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__bytes__"><code class="docutils literal notranslate"><span class="pre">object.__bytes__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__format__"><code class="docutils literal notranslate"><span class="pre">object.__format__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__lt__"><code class="docutils literal notranslate"><span class="pre">object.__lt__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__le__"><code class="docutils literal notranslate"><span class="pre">object.__le__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__eq__"><code class="docutils literal notranslate"><span class="pre">object.__eq__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ne__"><code class="docutils literal notranslate"><span class="pre">object.__ne__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__gt__"><code class="docutils literal notranslate"><span class="pre">object.__gt__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ge__"><code class="docutils literal notranslate"><span class="pre">object.__ge__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__hash__"><code class="docutils literal notranslate"><span class="pre">object.__hash__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__bool__"><code class="docutils literal notranslate"><span class="pre">object.__bool__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#basic-customization">3.3.1. Basic customization</a></li>
 <li><a class="reference internal" href="#customizing-attribute-access">3.3.2. Customizing attribute access</a><ul>
-<li><a class="reference internal" href="#object.__getattr__"><code class="docutils literal notranslate"><span class="pre">object.__getattr__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__getattribute__"><code class="docutils literal notranslate"><span class="pre">object.__getattribute__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__setattr__"><code class="docutils literal notranslate"><span class="pre">object.__setattr__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__delattr__"><code class="docutils literal notranslate"><span class="pre">object.__delattr__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__dir__"><code class="docutils literal notranslate"><span class="pre">object.__dir__()</span></code></a></li>
 <li><a class="reference internal" href="#customizing-module-attribute-access">3.3.2.1. Customizing module attribute access</a></li>
-<li><a class="reference internal" href="#implementing-descriptors">3.3.2.2. Implementing Descriptors</a><ul>
-<li><a class="reference internal" href="#object.__get__"><code class="docutils literal notranslate"><span class="pre">object.__get__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__set__"><code class="docutils literal notranslate"><span class="pre">object.__set__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__delete__"><code class="docutils literal notranslate"><span class="pre">object.__delete__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__objclass__"><code class="docutils literal notranslate"><span class="pre">object.__objclass__</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#implementing-descriptors">3.3.2.2. Implementing Descriptors</a></li>
 <li><a class="reference internal" href="#invoking-descriptors">3.3.2.3. Invoking Descriptors</a></li>
-<li><a class="reference internal" href="#slots">3.3.2.4. __slots__</a><ul>
-<li><a class="reference internal" href="#object.__slots__"><code class="docutils literal notranslate"><span class="pre">object.__slots__</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#slots">3.3.2.4. __slots__</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#customizing-class-creation">3.3.3. Customizing class creation</a><ul>
-<li><a class="reference internal" href="#object.__init_subclass__"><code class="docutils literal notranslate"><span class="pre">object.__init_subclass__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__set_name__"><code class="docutils literal notranslate"><span class="pre">object.__set_name__()</span></code></a></li>
 <li><a class="reference internal" href="#metaclasses">3.3.3.1. Metaclasses</a></li>
-<li><a class="reference internal" href="#resolving-mro-entries">3.3.3.2. Resolving MRO entries</a><ul>
-<li><a class="reference internal" href="#object.__mro_entries__"><code class="docutils literal notranslate"><span class="pre">object.__mro_entries__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#resolving-mro-entries">3.3.3.2. Resolving MRO entries</a></li>
 <li><a class="reference internal" href="#determining-the-appropriate-metaclass">3.3.3.3. Determining the appropriate metaclass</a></li>
 <li><a class="reference internal" href="#preparing-the-class-namespace">3.3.3.4. Preparing the class namespace</a></li>
 <li><a class="reference internal" href="#executing-the-class-body">3.3.3.5. Executing the class body</a></li>
@@ -3741,127 +3481,26 @@ supported, which is why the reflected method is not called.</p>
 <li><a class="reference internal" href="#uses-for-metaclasses">3.3.3.7. Uses for metaclasses</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#customizing-instance-and-subclass-checks">3.3.4. Customizing instance and subclass checks</a><ul>
-<li><a class="reference internal" href="#class.__instancecheck__"><code class="docutils literal notranslate"><span class="pre">class.__instancecheck__()</span></code></a></li>
-<li><a class="reference internal" href="#class.__subclasscheck__"><code class="docutils literal notranslate"><span class="pre">class.__subclasscheck__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#customizing-instance-and-subclass-checks">3.3.4. Customizing instance and subclass checks</a></li>
 <li><a class="reference internal" href="#emulating-generic-types">3.3.5. Emulating generic types</a><ul>
-<li><a class="reference internal" href="#object.__class_getitem__"><code class="docutils literal notranslate"><span class="pre">object.__class_getitem__()</span></code></a></li>
 <li><a class="reference internal" href="#the-purpose-of-class-getitem">3.3.5.1. The purpose of <em>__class_getitem__</em></a></li>
 <li><a class="reference internal" href="#class-getitem-versus-getitem">3.3.5.2. <em>__class_getitem__</em> versus <em>__getitem__</em></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#emulating-callable-objects">3.3.6. Emulating callable objects</a><ul>
-<li><a class="reference internal" href="#object.__call__"><code class="docutils literal notranslate"><span class="pre">object.__call__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#emulating-container-types">3.3.7. Emulating container types</a><ul>
-<li><a class="reference internal" href="#object.__len__"><code class="docutils literal notranslate"><span class="pre">object.__len__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__length_hint__"><code class="docutils literal notranslate"><span class="pre">object.__length_hint__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__getitem__"><code class="docutils literal notranslate"><span class="pre">object.__getitem__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__setitem__"><code class="docutils literal notranslate"><span class="pre">object.__setitem__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__delitem__"><code class="docutils literal notranslate"><span class="pre">object.__delitem__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__missing__"><code class="docutils literal notranslate"><span class="pre">object.__missing__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__iter__"><code class="docutils literal notranslate"><span class="pre">object.__iter__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__reversed__"><code class="docutils literal notranslate"><span class="pre">object.__reversed__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__contains__"><code class="docutils literal notranslate"><span class="pre">object.__contains__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#emulating-numeric-types">3.3.8. Emulating numeric types</a><ul>
-<li><a class="reference internal" href="#object.__add__"><code class="docutils literal notranslate"><span class="pre">object.__add__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__sub__"><code class="docutils literal notranslate"><span class="pre">object.__sub__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__mul__"><code class="docutils literal notranslate"><span class="pre">object.__mul__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__matmul__"><code class="docutils literal notranslate"><span class="pre">object.__matmul__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__truediv__"><code class="docutils literal notranslate"><span class="pre">object.__truediv__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__floordiv__"><code class="docutils literal notranslate"><span class="pre">object.__floordiv__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__mod__"><code class="docutils literal notranslate"><span class="pre">object.__mod__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__divmod__"><code class="docutils literal notranslate"><span class="pre">object.__divmod__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__pow__"><code class="docutils literal notranslate"><span class="pre">object.__pow__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__lshift__"><code class="docutils literal notranslate"><span class="pre">object.__lshift__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rshift__"><code class="docutils literal notranslate"><span class="pre">object.__rshift__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__and__"><code class="docutils literal notranslate"><span class="pre">object.__and__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__xor__"><code class="docutils literal notranslate"><span class="pre">object.__xor__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__or__"><code class="docutils literal notranslate"><span class="pre">object.__or__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__radd__"><code class="docutils literal notranslate"><span class="pre">object.__radd__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rsub__"><code class="docutils literal notranslate"><span class="pre">object.__rsub__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rmul__"><code class="docutils literal notranslate"><span class="pre">object.__rmul__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rmatmul__"><code class="docutils literal notranslate"><span class="pre">object.__rmatmul__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rtruediv__"><code class="docutils literal notranslate"><span class="pre">object.__rtruediv__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rfloordiv__"><code class="docutils literal notranslate"><span class="pre">object.__rfloordiv__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rmod__"><code class="docutils literal notranslate"><span class="pre">object.__rmod__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rdivmod__"><code class="docutils literal notranslate"><span class="pre">object.__rdivmod__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rpow__"><code class="docutils literal notranslate"><span class="pre">object.__rpow__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rlshift__"><code class="docutils literal notranslate"><span class="pre">object.__rlshift__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rrshift__"><code class="docutils literal notranslate"><span class="pre">object.__rrshift__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rand__"><code class="docutils literal notranslate"><span class="pre">object.__rand__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__rxor__"><code class="docutils literal notranslate"><span class="pre">object.__rxor__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ror__"><code class="docutils literal notranslate"><span class="pre">object.__ror__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__iadd__"><code class="docutils literal notranslate"><span class="pre">object.__iadd__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__isub__"><code class="docutils literal notranslate"><span class="pre">object.__isub__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__imul__"><code class="docutils literal notranslate"><span class="pre">object.__imul__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__imatmul__"><code class="docutils literal notranslate"><span class="pre">object.__imatmul__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__itruediv__"><code class="docutils literal notranslate"><span class="pre">object.__itruediv__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ifloordiv__"><code class="docutils literal notranslate"><span class="pre">object.__ifloordiv__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__imod__"><code class="docutils literal notranslate"><span class="pre">object.__imod__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ipow__"><code class="docutils literal notranslate"><span class="pre">object.__ipow__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ilshift__"><code class="docutils literal notranslate"><span class="pre">object.__ilshift__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__irshift__"><code class="docutils literal notranslate"><span class="pre">object.__irshift__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__iand__"><code class="docutils literal notranslate"><span class="pre">object.__iand__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ixor__"><code class="docutils literal notranslate"><span class="pre">object.__ixor__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ior__"><code class="docutils literal notranslate"><span class="pre">object.__ior__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__neg__"><code class="docutils literal notranslate"><span class="pre">object.__neg__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__pos__"><code class="docutils literal notranslate"><span class="pre">object.__pos__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__abs__"><code class="docutils literal notranslate"><span class="pre">object.__abs__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__invert__"><code class="docutils literal notranslate"><span class="pre">object.__invert__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__complex__"><code class="docutils literal notranslate"><span class="pre">object.__complex__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__int__"><code class="docutils literal notranslate"><span class="pre">object.__int__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__float__"><code class="docutils literal notranslate"><span class="pre">object.__float__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__index__"><code class="docutils literal notranslate"><span class="pre">object.__index__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__round__"><code class="docutils literal notranslate"><span class="pre">object.__round__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__trunc__"><code class="docutils literal notranslate"><span class="pre">object.__trunc__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__floor__"><code class="docutils literal notranslate"><span class="pre">object.__floor__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__ceil__"><code class="docutils literal notranslate"><span class="pre">object.__ceil__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#with-statement-context-managers">3.3.9. With Statement Context Managers</a><ul>
-<li><a class="reference internal" href="#object.__enter__"><code class="docutils literal notranslate"><span class="pre">object.__enter__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__exit__"><code class="docutils literal notranslate"><span class="pre">object.__exit__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#customizing-positional-arguments-in-class-pattern-matching">3.3.10. Customizing positional arguments in class pattern matching</a><ul>
-<li><a class="reference internal" href="#object.__match_args__"><code class="docutils literal notranslate"><span class="pre">object.__match_args__</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#emulating-buffer-types">3.3.11. Emulating buffer types</a><ul>
-<li><a class="reference internal" href="#object.__buffer__"><code class="docutils literal notranslate"><span class="pre">object.__buffer__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__release_buffer__"><code class="docutils literal notranslate"><span class="pre">object.__release_buffer__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#emulating-callable-objects">3.3.6. Emulating callable objects</a></li>
+<li><a class="reference internal" href="#emulating-container-types">3.3.7. Emulating container types</a></li>
+<li><a class="reference internal" href="#emulating-numeric-types">3.3.8. Emulating numeric types</a></li>
+<li><a class="reference internal" href="#with-statement-context-managers">3.3.9. With Statement Context Managers</a></li>
+<li><a class="reference internal" href="#customizing-positional-arguments-in-class-pattern-matching">3.3.10. Customizing positional arguments in class pattern matching</a></li>
+<li><a class="reference internal" href="#emulating-buffer-types">3.3.11. Emulating buffer types</a></li>
 <li><a class="reference internal" href="#special-method-lookup">3.3.12. Special method lookup</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#coroutines">3.4. 協程</a><ul>
-<li><a class="reference internal" href="#awaitable-objects">3.4.1. Awaitable Objects</a><ul>
-<li><a class="reference internal" href="#object.__await__"><code class="docutils literal notranslate"><span class="pre">object.__await__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#coroutine-objects">3.4.2. Coroutine Objects</a><ul>
-<li><a class="reference internal" href="#coroutine.send"><code class="docutils literal notranslate"><span class="pre">coroutine.send()</span></code></a></li>
-<li><a class="reference internal" href="#coroutine.throw"><code class="docutils literal notranslate"><span class="pre">coroutine.throw()</span></code></a></li>
-<li><a class="reference internal" href="#coroutine.close"><code class="docutils literal notranslate"><span class="pre">coroutine.close()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#asynchronous-iterators">3.4.3. Asynchronous Iterators</a><ul>
-<li><a class="reference internal" href="#object.__aiter__"><code class="docutils literal notranslate"><span class="pre">object.__aiter__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__anext__"><code class="docutils literal notranslate"><span class="pre">object.__anext__()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#asynchronous-context-managers">3.4.4. Asynchronous Context Managers</a><ul>
-<li><a class="reference internal" href="#object.__aenter__"><code class="docutils literal notranslate"><span class="pre">object.__aenter__()</span></code></a></li>
-<li><a class="reference internal" href="#object.__aexit__"><code class="docutils literal notranslate"><span class="pre">object.__aexit__()</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#awaitable-objects">3.4.1. Awaitable Objects</a></li>
+<li><a class="reference internal" href="#coroutine-objects">3.4.2. Coroutine Objects</a></li>
+<li><a class="reference internal" href="#asynchronous-iterators">3.4.3. Asynchronous Iterators</a></li>
+<li><a class="reference internal" href="#asynchronous-context-managers">3.4.4. Asynchronous Context Managers</a></li>
 </ul>
 </li>
 </ul>
@@ -3914,7 +3553,7 @@ supported, which is why the reflected method is not called.</p>
           <a href="lexical_analysis.html" title="2. Lexical analysis"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -3924,11 +3563,11 @@ supported, which is why the reflected method is not called.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 語言參考手冊</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href=""><span class="section-number">3. </span>Data model</a></li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">3. </span>資料模型</a></li>
                 <li class="right">
                     
 
@@ -3953,13 +3592,14 @@ supported, which is why the reflected method is not called.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -3967,7 +3607,7 @@ supported, which is why the reflected method is not called.</p>
 <br />
     <br />
 
-    最後更新於 Dec 22, 2023 (02:09 UTC)。
+    最後更新於 Mar 10, 2024 (07:25 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Object Protocol &#8212; Python 3.12.1 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Protocol &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=3221873d"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.1 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -124,7 +124,7 @@
           <a href="abstract.html" title="抽象物件層 (Abstract Objects Layer)"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -134,7 +134,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -186,12 +186,21 @@ function (that is, create a new <a class="reference internal" href="../glossary.
 to NotImplemented and return it).</p>
 </dd></dl>
 
+<dl class="c macro">
+<dt class="sig sig-object c" id="c.Py_PRINT_RAW">
+<span class="sig-name descname"><span class="n"><span class="pre">Py_PRINT_RAW</span></span></span><a class="headerlink" href="#c.Py_PRINT_RAW" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Flag to be used with multiple functions that print the object (like
+<a class="reference internal" href="#c.PyObject_Print" title="PyObject_Print"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_Print()</span></code></a> and <a class="reference internal" href="file.html#c.PyFile_WriteObject" title="PyFile_WriteObject"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyFile_WriteObject()</span></code></a>).
+If passed, these function would use the <a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> of the object
+instead of the <a class="reference internal" href="../library/functions.html#repr" title="repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code></a>.</p>
+</dd></dl>
+
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyObject_Print">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_Print</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span>, <span class="n"><span class="pre">FILE</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">fp</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">flags</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_Print" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Print an object <em>o</em>, on file <em>fp</em>.  Returns <code class="docutils literal notranslate"><span class="pre">-1</span></code> on error.  The flags argument
 is used to enable certain printing options.  The only option currently supported
-is <code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_PRINT_RAW</span></code>; if given, the <a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> of the object is written
+is <a class="reference internal" href="#c.Py_PRINT_RAW" title="Py_PRINT_RAW"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_PRINT_RAW</span></code></a>; if given, the <a class="reference internal" href="../library/stdtypes.html#str" title="str"><code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code></a> of the object is written
 instead of the <a class="reference internal" href="../library/functions.html#repr" title="repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">repr()</span></code></a>.</p>
 </dd></dl>
 
@@ -352,12 +361,8 @@ to <em>opid</em>. Returns the value of the comparison on success, or <code class
 <dt class="sig sig-object c" id="c.PyObject_RichCompareBool">
 <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_RichCompareBool</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o1</span></span>, <a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o2</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n"><span class="pre">opid</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_RichCompareBool" title="Link to this definition">¶</a><br /></dt>
 <dd><em class="stableabi"> 為 <a class="reference internal" href="stable.html#stable"><span class="std std-ref">穩定 ABI 的一部分</span></a>.</em><p>Compare the values of <em>o1</em> and <em>o2</em> using the operation specified by <em>opid</em>,
-which must be one of <a class="reference internal" href="typeobj.html#c.Py_LT" title="Py_LT"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_LT</span></code></a>, <a class="reference internal" href="typeobj.html#c.Py_LE" title="Py_LE"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_LE</span></code></a>, <a class="reference internal" href="typeobj.html#c.Py_EQ" title="Py_EQ"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_EQ</span></code></a>,
-<a class="reference internal" href="typeobj.html#c.Py_NE" title="Py_NE"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_NE</span></code></a>, <a class="reference internal" href="typeobj.html#c.Py_GT" title="Py_GT"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_GT</span></code></a>, or <a class="reference internal" href="typeobj.html#c.Py_GE" title="Py_GE"><code class="xref c c-macro docutils literal notranslate"><span class="pre">Py_GE</span></code></a>, corresponding to <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>,
-<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> respectively. Returns <code class="docutils literal notranslate"><span class="pre">-1</span></code> on error,
-<code class="docutils literal notranslate"><span class="pre">0</span></code> if the result is false, <code class="docutils literal notranslate"><span class="pre">1</span></code> otherwise. This is the equivalent of the
-Python expression <code class="docutils literal notranslate"><span class="pre">o1</span> <span class="pre">op</span> <span class="pre">o2</span></code>, where <code class="docutils literal notranslate"><span class="pre">op</span></code> is the operator corresponding to
-<em>opid</em>.</p>
+like <a class="reference internal" href="#c.PyObject_RichCompare" title="PyObject_RichCompare"><code class="xref c c-func docutils literal notranslate"><span class="pre">PyObject_RichCompare()</span></code></a>, but returns <code class="docutils literal notranslate"><span class="pre">-1</span></code> on error, <code class="docutils literal notranslate"><span class="pre">0</span></code> if
+the result is false, <code class="docutils literal notranslate"><span class="pre">1</span></code> otherwise.</p>
 </dd></dl>
 
 <div class="admonition note">
@@ -457,7 +462,7 @@ of base classes).</p>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyObject_Hash">
-<span class="n"><span class="pre">Py_hash_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_Hash</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_Hash" title="Link to this definition">¶</a><br /></dt>
+<a class="reference internal" href="hash.html#c.Py_hash_t" title="Py_hash_t"><span class="n"><span class="pre">Py_hash_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_Hash</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_Hash" title="Link to this definition">¶</a><br /></dt>
 <dd><em class="stableabi"> 為 <a class="reference internal" href="stable.html#stable"><span class="std std-ref">穩定 ABI 的一部分</span></a>.</em><p id="index-6">Compute and return the hash value of an object <em>o</em>.  On failure, return <code class="docutils literal notranslate"><span class="pre">-1</span></code>.
 This is the equivalent of the Python expression <code class="docutils literal notranslate"><span class="pre">hash(o)</span></code>.</p>
 <div class="versionchanged">
@@ -468,7 +473,7 @@ as <a class="reference internal" href="intro.html#c.Py_ssize_t" title="Py_ssize_
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.PyObject_HashNotImplemented">
-<span class="n"><span class="pre">Py_hash_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_HashNotImplemented</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_HashNotImplemented" title="Link to this definition">¶</a><br /></dt>
+<a class="reference internal" href="hash.html#c.Py_hash_t" title="Py_hash_t"><span class="n"><span class="pre">Py_hash_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">PyObject_HashNotImplemented</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n"><span class="pre">PyObject</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">o</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.PyObject_HashNotImplemented" title="Link to this definition">¶</a><br /></dt>
 <dd><em class="stableabi"> 為 <a class="reference internal" href="stable.html#stable"><span class="std std-ref">穩定 ABI 的一部分</span></a>.</em><p>Set a <a class="reference internal" href="../library/exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> indicating that <code class="docutils literal notranslate"><span class="pre">type(o)</span></code> is not <a class="reference internal" href="../glossary.html#term-hashable"><span class="xref std std-term">hashable</span></a> and return <code class="docutils literal notranslate"><span class="pre">-1</span></code>.
 This function receives special treatment when stored in a <code class="docutils literal notranslate"><span class="pre">tp_hash</span></code> slot,
 allowing a type to explicitly indicate to the interpreter that it is not
@@ -684,7 +689,7 @@ Python does not check this.</p>
           <a href="abstract.html" title="抽象物件層 (Abstract Objects Layer)"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -694,7 +699,7 @@ Python does not check this.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -724,13 +729,14 @@ Python does not check this.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -738,7 +744,7 @@ Python does not check this.</p>
 <br />
     <br />
 
-    最後更新於 Dec 22, 2023 (02:09 UTC)。
+    最後更新於 Mar 10, 2024 (07:25 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

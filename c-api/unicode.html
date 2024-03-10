@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Unicode 物件與編解碼器 &#8212; Python 3.12.1 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unicode 物件與編解碼器 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=3221873d"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.1 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -158,7 +158,7 @@
           <a href="bytearray.html" title="位元組陣列物件 (Byte Array Objects)"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -168,7 +168,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -744,7 +744,7 @@ that the type of the argument is <span class="c-expr sig sig-inline c"><span cla
 <td><p>A single character.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">s</span></code></p></td>
-<td><p><span class="c-expr sig sig-inline c"><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="p">*</span></span> or <span class="c-expr sig sig-inline c"><span class="k">const</span><span class="w"> </span><span class="n">wchar_t</span><span class="p">*</span></span></p></td>
+<td><p><span class="c-expr sig sig-inline c"><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="p">*</span></span> 或 <span class="c-expr sig sig-inline c"><span class="k">const</span><span class="w"> </span><span class="n">wchar_t</span><span class="p">*</span></span></p></td>
 <td><p>A null-terminated C character array.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">p</span></code></p></td>
@@ -763,7 +763,7 @@ start with the literal <code class="docutils literal notranslate"><span class="p
 <td><p>一 Unicode 物件。</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">V</span></code></p></td>
-<td><p><span class="c-expr sig sig-inline c"><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n">PyObject</span></a><span class="p">*</span></span>, <span class="c-expr sig sig-inline c"><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="p">*</span></span> or <span class="c-expr sig sig-inline c"><span class="k">const</span><span class="w"> </span><span class="n">wchar_t</span><span class="p">*</span></span></p></td>
+<td><p><span class="c-expr sig sig-inline c"><a class="reference internal" href="structures.html#c.PyObject" title="PyObject"><span class="n">PyObject</span></a><span class="p">*</span></span>、<span class="c-expr sig sig-inline c"><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="p">*</span></span> 或 <span class="c-expr sig sig-inline c"><span class="k">const</span><span class="w"> </span><span class="n">wchar_t</span><span class="p">*</span></span></p></td>
 <td><p>A Unicode object (which may be <code class="docutils literal notranslate"><span class="pre">NULL</span></code>) and a null-terminated
 C character array as a second parameter (which will be used,
 if the first parameter is <code class="docutils literal notranslate"><span class="pre">NULL</span></code>).</p></td>
@@ -1120,7 +1120,10 @@ Return <code class="docutils literal notranslate"><span class="pre">NULL</span><
 <dd><em class="stableabi"> 為 <a class="reference internal" href="stable.html#stable"><span class="std std-ref">穩定 ABI 的一部分</span></a>.</em><p>Copy the Unicode object contents into the <code class="xref c c-type docutils literal notranslate"><span class="pre">wchar_t</span></code> buffer <em>wstr</em>.  At most
 <em>size</em> <code class="xref c c-type docutils literal notranslate"><span class="pre">wchar_t</span></code> characters are copied (excluding a possibly trailing
 null termination character).  Return the number of <code class="xref c c-type docutils literal notranslate"><span class="pre">wchar_t</span></code> characters
-copied or <code class="docutils literal notranslate"><span class="pre">-1</span></code> in case of an error.  Note that the resulting <span class="c-expr sig sig-inline c"><span class="n">wchar_t</span><span class="p">*</span></span>
+copied or <code class="docutils literal notranslate"><span class="pre">-1</span></code> in case of an error.</p>
+<p>When <em>wstr</em> is <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, instead return the <em>size</em> that would be required
+to store all of <em>unicode</em> including a terminating null.</p>
+<p>Note that the resulting <span class="c-expr sig sig-inline c"><span class="n">wchar_t</span><span class="p">*</span></span>
 string may or may not be null-terminated.  It is the responsibility of the caller
 to make sure that the <span class="c-expr sig sig-inline c"><span class="n">wchar_t</span><span class="p">*</span></span> string is null-terminated in case this is
 required by the application. Also, note that the <span class="c-expr sig sig-inline c"><span class="n">wchar_t</span><span class="p">*</span></span> string
@@ -1790,7 +1793,7 @@ interned string object with the same value.</p>
           <a href="bytearray.html" title="位元組陣列物件 (Byte Array Objects)"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -1800,7 +1803,7 @@ interned string object with the same value.</p>
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python/C API 參考手冊</a> &#187;</li>
@@ -1830,13 +1833,14 @@ interned string object with the same value.</p>
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -1844,7 +1848,7 @@ interned string object with the same value.</p>
 <br />
     <br />
 
-    最後更新於 Dec 22, 2023 (02:09 UTC)。
+    最後更新於 Mar 10, 2024 (07:25 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 

@@ -5,13 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>內建常數 &#8212; Python 3.12.1 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>內建常數 &#8212; Python 3.12.2 說明文件</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=aa5eeaf2" />
+    <link rel="stylesheet" type="text/css" href="../_static/pydoctheme.css?v=e8a97c27" />
     <link id="pygments_dark_css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css" href="../_static/pygments_dark.css?v=b20cc3f5" />
     
-    <script src="../_static/documentation_options.js?v=3221873d"></script>
+    <script src="../_static/documentation_options.js?v=056bc313"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=d9a6981e"></script>
@@ -19,7 +19,7 @@
     <script src="../_static/sidebar.js"></script>
     
     <link rel="search" type="application/opensearchdescription+xml"
-          title="在 Python 3.12.1 說明文件 中搜尋"
+          title="在 Python 3.12.2 說明文件 中搜尋"
           href="../_static/opensearch.xml"/>
     <link rel="author" title="關於這些文件" href="../about.html" />
     <link rel="index" title="索引" href="../genindex.html" />
@@ -58,7 +58,7 @@
         </label>
         <span class="nav-items-wrapper">
             <a href="https://www.python.org/" class="nav-logo">
-                <img src="../_static/py.svg" alt="Logo"/>
+                <img src="../_static/py.svg" alt="Python logo"/>
             </a>
             <span class="version_switcher_placeholder"></span>
             <form role="search" class="search" action="../search.html" method="get">
@@ -86,20 +86,7 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#">內建常數</a><ul>
-<li><a class="reference internal" href="#False"><code class="docutils literal notranslate"><span class="pre">False</span></code></a></li>
-<li><a class="reference internal" href="#True"><code class="docutils literal notranslate"><span class="pre">True</span></code></a></li>
-<li><a class="reference internal" href="#None"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></li>
-<li><a class="reference internal" href="#NotImplemented"><code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></a></li>
-<li><a class="reference internal" href="#Ellipsis"><code class="docutils literal notranslate"><span class="pre">Ellipsis</span></code></a></li>
-<li><a class="reference internal" href="#debug__"><code class="docutils literal notranslate"><span class="pre">__debug__</span></code></a></li>
-<li><a class="reference internal" href="#constants-added-by-the-site-module">由 <code class="xref py py-mod docutils literal notranslate"><span class="pre">site</span></code> module（模組）所添增的常數</a><ul>
-<li><a class="reference internal" href="#quit"><code class="docutils literal notranslate"><span class="pre">quit</span></code></a></li>
-<li><a class="reference internal" href="#exit"><code class="docutils literal notranslate"><span class="pre">exit</span></code></a></li>
-<li><a class="reference internal" href="#copyright"><code class="docutils literal notranslate"><span class="pre">copyright</span></code></a></li>
-<li><a class="reference internal" href="#credits"><code class="docutils literal notranslate"><span class="pre">credits</span></code></a></li>
-<li><a class="reference internal" href="#license"><code class="docutils literal notranslate"><span class="pre">license</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#constants-added-by-the-site-module">由 <code class="xref py py-mod docutils literal notranslate"><span class="pre">site</span></code> module（模組）所添增的常數</a></li>
 </ul>
 </li>
 </ul>
@@ -147,7 +134,7 @@
           <a href="functions.html" title="內建函式"
              accesskey="P">上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -157,7 +144,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -215,18 +202,33 @@
 <dl class="py data">
 <dt class="sig sig-object py" id="NotImplemented">
 <span class="sig-name descname"><span class="pre">NotImplemented</span></span><a class="headerlink" href="#NotImplemented" title="Link to this definition">¶</a></dt>
-<dd><p>會被二元特殊方法 (binary special methods)（如：<a class="reference internal" href="../reference/datamodel.html#object.__eq__" title="object.__eq__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__eq__()</span></code></a>、<a class="reference internal" href="../reference/datamodel.html#object.__lt__" title="object.__lt__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__lt__()</span></code></a>、<a class="reference internal" href="../reference/datamodel.html#object.__add__" title="object.__add__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__add__()</span></code></a>、<a class="reference internal" href="../reference/datamodel.html#object.__rsub__" title="object.__rsub__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__rsub__()</span></code></a>  等）所回傳的特殊值，代表著該運算沒有針對其他型別的實作。同理也可以被原地二元特殊方法 (in-place binary special methods) （如：<a class="reference internal" href="../reference/datamodel.html#object.__imul__" title="object.__imul__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__imul__()</span></code></a>、<a class="reference internal" href="../reference/datamodel.html#object.__iand__" title="object.__iand__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__iand__()</span></code></a> 等）回傳。它不應該被作為 boolean（布林）來解讀。<code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> 是型別 <a class="reference internal" href="types.html#types.NotImplementedType" title="types.NotImplementedType"><code class="xref py py-data docutils literal notranslate"><span class="pre">types.NotImplementedType</span></code></a> 的唯一實例。</p>
+<dd><p>A special value which should be returned by the binary special methods
+(e.g. <a class="reference internal" href="../reference/datamodel.html#object.__eq__" title="object.__eq__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__eq__()</span></code></a>, <a class="reference internal" href="../reference/datamodel.html#object.__lt__" title="object.__lt__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__lt__()</span></code></a>, <a class="reference internal" href="../reference/datamodel.html#object.__add__" title="object.__add__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__add__()</span></code></a>, <a class="reference internal" href="../reference/datamodel.html#object.__rsub__" title="object.__rsub__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__rsub__()</span></code></a>,
+etc.) to indicate that the operation is not implemented with respect to
+the other type; may be returned by the in-place binary special methods
+(e.g. <a class="reference internal" href="../reference/datamodel.html#object.__imul__" title="object.__imul__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__imul__()</span></code></a>, <a class="reference internal" href="../reference/datamodel.html#object.__iand__" title="object.__iand__"><code class="xref py py-meth docutils literal notranslate"><span class="pre">__iand__()</span></code></a>, etc.) for the same purpose.
+It should not be evaluated in a boolean context.
+<code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code> is the sole instance of the <a class="reference internal" href="types.html#types.NotImplementedType" title="types.NotImplementedType"><code class="xref py py-data docutils literal notranslate"><span class="pre">types.NotImplementedType</span></code></a> type.</p>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p>當一個二元 (binary) 或原地 (in-place) 方法回傳 <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>，直譯器會嘗試反映該操作到其他型別（或是其他後援 (fallback)，取決於是哪種運算子）。如果所有的常識都回傳 <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>，直譯器會拋出適當的例外。不正確的回傳 <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> 會造成誤導的錯誤訊息或是 <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> 值被傳回到 Python 程式碼中。</p>
+<p>When a binary (or in-place) method returns <code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code> the
+interpreter will try the reflected operation on the other type (or some
+other fallback, depending on the operator).  If all attempts return
+<code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code>, the interpreter will raise an appropriate exception.
+Incorrectly returning <code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code> will result in a misleading
+error message or the <code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code> value being returned to Python code.</p>
 <p>請參見 <a class="reference internal" href="numbers.html#implementing-the-arithmetic-operations"><span class="std std-ref">實作算術操作</span></a> 以找到更多範例。</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">備註</p>
-<p><code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code> 與 <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> 並不一樣且不可互換。即使它們有相似的名稱與用途。欲知更多如何使用它們的細節，請參見 <a class="reference internal" href="exceptions.html#NotImplementedError" title="NotImplementedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a>。</p>
+<p><code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code> and <code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code> are not interchangeable,
+even though they have similar names and purposes.
+See <a class="reference internal" href="exceptions.html#NotImplementedError" title="NotImplementedError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a> for details on when to use it.</p>
 </div>
 <div class="versionchanged">
-<p><span class="versionmodified changed">在 3.9 版的變更: </span>在 boolean（布林）上下文中解讀 <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code> 已經被棄用。雖然目前會被解讀成 true，但會發出一個 <a class="reference internal" href="exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a>。在未來版本的 Python 將會拋出 <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a>。</p>
+<p><span class="versionmodified changed">在 3.9 版的變更: </span>Evaluating <code class="xref py py-data docutils literal notranslate"><span class="pre">NotImplemented</span></code> in a boolean context is deprecated. While
+it currently evaluates as true, it will emit a <a class="reference internal" href="exceptions.html#DeprecationWarning" title="DeprecationWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">DeprecationWarning</span></code></a>.
+It will raise a <a class="reference internal" href="exceptions.html#TypeError" title="TypeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code></a> in a future version of Python.</p>
 </div>
 </dd></dl>
 
@@ -285,20 +287,7 @@
     <h3><a href="../contents.html">目錄</a></h3>
     <ul>
 <li><a class="reference internal" href="#">內建常數</a><ul>
-<li><a class="reference internal" href="#False"><code class="docutils literal notranslate"><span class="pre">False</span></code></a></li>
-<li><a class="reference internal" href="#True"><code class="docutils literal notranslate"><span class="pre">True</span></code></a></li>
-<li><a class="reference internal" href="#None"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></li>
-<li><a class="reference internal" href="#NotImplemented"><code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code></a></li>
-<li><a class="reference internal" href="#Ellipsis"><code class="docutils literal notranslate"><span class="pre">Ellipsis</span></code></a></li>
-<li><a class="reference internal" href="#debug__"><code class="docutils literal notranslate"><span class="pre">__debug__</span></code></a></li>
-<li><a class="reference internal" href="#constants-added-by-the-site-module">由 <code class="xref py py-mod docutils literal notranslate"><span class="pre">site</span></code> module（模組）所添增的常數</a><ul>
-<li><a class="reference internal" href="#quit"><code class="docutils literal notranslate"><span class="pre">quit</span></code></a></li>
-<li><a class="reference internal" href="#exit"><code class="docutils literal notranslate"><span class="pre">exit</span></code></a></li>
-<li><a class="reference internal" href="#copyright"><code class="docutils literal notranslate"><span class="pre">copyright</span></code></a></li>
-<li><a class="reference internal" href="#credits"><code class="docutils literal notranslate"><span class="pre">credits</span></code></a></li>
-<li><a class="reference internal" href="#license"><code class="docutils literal notranslate"><span class="pre">license</span></code></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#constants-added-by-the-site-module">由 <code class="xref py py-mod docutils literal notranslate"><span class="pre">site</span></code> module（模組）所添增的常數</a></li>
 </ul>
 </li>
 </ul>
@@ -349,7 +338,7 @@
           <a href="functions.html" title="內建函式"
              >上一頁</a> |</li>
 
-          <li><img src="../_static/py.svg" alt="python logo" style="vertical-align: middle; margin-top: -1px"/></li>
+          <li><img src="../_static/py.svg" alt="Python logo" style="vertical-align: middle; margin-top: -1px"/></li>
           <li><a href="https://www.python.org/">Python</a> &#187;</li>
           <li class="switchers">
             <div class="language_switcher_placeholder"></div>
@@ -359,7 +348,7 @@
               
           </li>
     <li id="cpython-language-and-version">
-      <a href="../index.html">3.12.1 Documentation</a> &#187;
+      <a href="../index.html">3.12.2 Documentation</a> &#187;
     </li>
 
           <li class="nav-item nav-item-1"><a href="index.html" >Python 標準函式庫 (Standard Library)</a> &#187;</li>
@@ -388,13 +377,14 @@
       </ul>
     </div>  
     <div class="footer">
-    &copy; <a href="../copyright.html">版權</a> 2001-2023, Python Software Foundation.
+    &copy; <a href="../copyright.html">版權</a> 2001-2024, Python Software Foundation.
     <br />
     This page is licensed under the Python Software Foundation License Version 2.
     <br />
     Examples, recipes, and other code in the documentation are additionally licensed under the Zero Clause BSD License.
     <br />
     See <a href="/license.html">History and License</a> for more information.<br />
+    
     <br />
 
     The Python Software Foundation is a non-profit corporation.
@@ -402,7 +392,7 @@
 <br />
     <br />
 
-    最後更新於 Dec 22, 2023 (02:09 UTC)。
+    最後更新於 Mar 10, 2024 (07:25 UTC)。
     <a href="/bugs.html">Found a bug</a>?
     <br />
 
