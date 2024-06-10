@@ -1328,7 +1328,7 @@ msgstr ""
 
 #: ../../library/stdtypes.rst:903
 msgid "Generator Types"
-msgstr ""
+msgstr "生成器型別"
 
 #: ../../library/stdtypes.rst:905
 msgid ""
@@ -1339,10 +1339,14 @@ msgid ""
 "`~generator.__next__` methods. More information about generators can be "
 "found in :ref:`the documentation for the yield expression <yieldexpr>`."
 msgstr ""
+"Python 的\\ :term:`生成器`\\ 提供了一種便利方法以實作疊代器協定。如果容器物件的 :meth:"
+"`__iter__` method 被實作為一個生成器，則它將自動回傳一個疊代器物件（技術上，一個"
+"生成器物件）供應 :meth:`__iter__` 和 :meth:`~generator.__next__` methods。更多有關"
+"生成器的資訊可以在 :ref:`yield 表達式的檔案 <yieldexpr>` 中找到。"
 
 #: ../../library/stdtypes.rst:917
 msgid "Sequence Types --- :class:`list`, :class:`tuple`, :class:`range`"
-msgstr ""
+msgstr "序列型別 --- :class:`list`、:class:`tuple`、:class:`range`"
 
 #: ../../library/stdtypes.rst:919
 msgid ""
@@ -1351,10 +1355,13 @@ msgid ""
 "<binaryseq>` and :ref:`text strings <textseq>` are described in dedicated "
 "sections."
 msgstr ""
+"這裡有三種基本的序列型別：list（串列）、tuple 和 range 物件。針對處理"
+":ref:`binary data <binaryseq>` 和 :ref:`text strings <textseq>` "
+"的其他序列型別在專用章節中有描述。"
 
 #: ../../library/stdtypes.rst:928
 msgid "Common Sequence Operations"
-msgstr ""
+msgstr "共用序列操作"
 
 #: ../../library/stdtypes.rst:932
 msgid ""
@@ -1363,6 +1370,9 @@ msgid ""
 "provided to make it easier to correctly implement these operations on custom "
 "sequence types."
 msgstr ""
+"在下表中的操作被大多數序列型別支援，包含可變的與不可變的。"
+"提供 :class:`collections.abc.Sequence` ABC "
+"使得在自定義序列型別上正確地實作這些操作更加容易。"
 
 #: ../../library/stdtypes.rst:937
 msgid ""
@@ -1371,6 +1381,10 @@ msgid ""
 "are integers and *x* is an arbitrary object that meets any type and value "
 "restrictions imposed by *s*."
 msgstr ""
+"這個表列出了按優先順序升序排列的序列操作。"
+"在表中，*s* 和 *t* 是相同型別的序列，*n*、*i*、"
+"*j* 和 *k* 是整數，而 *x* 是一個符合 *s* "
+"所施加的任何型別和值限制的任意物件。"
 
 #: ../../library/stdtypes.rst:942
 msgid ""
