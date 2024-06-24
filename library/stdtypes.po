@@ -1361,7 +1361,7 @@ msgstr ""
 
 #: ../../library/stdtypes.rst:928
 msgid "Common Sequence Operations"
-msgstr "共用序列操作"
+msgstr "共用序列運算"
 
 #: ../../library/stdtypes.rst:932
 msgid ""
@@ -1370,9 +1370,9 @@ msgid ""
 "provided to make it easier to correctly implement these operations on custom "
 "sequence types."
 msgstr ""
-"在下表中的操作被大多數序列型別支援，包含可變的與不可變的。"
+"在下表中的運算被大多數序列型別支援，包含可變的與不可變的。"
 "提供 :class:`collections.abc.Sequence` ABC "
-"使得在自定義序列型別上正確地實作這些操作更加容易。"
+"使得在自定義序列型別上正確地實作這些運算更加容易。"
 
 #: ../../library/stdtypes.rst:937
 msgid ""
@@ -1381,7 +1381,7 @@ msgid ""
 "are integers and *x* is an arbitrary object that meets any type and value "
 "restrictions imposed by *s*."
 msgstr ""
-"這個表列出了按優先順序升序排列的序列操作。"
+"這個表列出了按優先順序升序排列的序列運算。"
 "在表中，*s* 和 *t* 是相同型別的序列，*n*、*i*、"
 "*j* 和 *k* 是整數，而 *x* 是一個符合 *s* "
 "所施加的任何型別和值限制的任意物件。"
@@ -1393,6 +1393,9 @@ msgid ""
 "operations have the same priority as the corresponding numeric operations. "
 "[3]_"
 msgstr ""
+"``in`` 和 ``not in`` 運算與比較運算有相同"
+"的優先順序。 ``+``（串接）和 ``*``（重複）"
+"運算與相應數值運算有相同的優先順序。[3]_"
 
 #: ../../library/stdtypes.rst:963
 msgid "``x in s``"
@@ -1400,7 +1403,7 @@ msgstr "``x in s``"
 
 #: ../../library/stdtypes.rst:963
 msgid "``True`` if an item of *s* is equal to *x*, else ``False``"
-msgstr ""
+msgstr "如果 *s* 的其中一個項目等於 *x* 則為 ``True``，否則為 ``False``"
 
 #: ../../library/stdtypes.rst:966
 msgid "``x not in s``"
@@ -1408,7 +1411,7 @@ msgstr "``x not in s``"
 
 #: ../../library/stdtypes.rst:966
 msgid "``False`` if an item of *s* is equal to *x*, else ``True``"
-msgstr ""
+msgstr "如果 *s* 的其中一個項目等於 *x* 則為 ``False``，否則為 ``True``"
 
 #: ../../library/stdtypes.rst:969
 msgid "``s + t``"
@@ -1416,7 +1419,7 @@ msgstr "``s + t``"
 
 #: ../../library/stdtypes.rst:969
 msgid "the concatenation of *s* and *t*"
-msgstr ""
+msgstr "*s* 和 *t* 的串接"
 
 #: ../../library/stdtypes.rst:969
 msgid "(6)(7)"
@@ -1428,7 +1431,7 @@ msgstr "``s * n`` 或 ``n * s``"
 
 #: ../../library/stdtypes.rst:972
 msgid "equivalent to adding *s* to itself *n* times"
-msgstr ""
+msgstr "等同於將 *s* 加自己 *n* 次"
 
 #: ../../library/stdtypes.rst:972
 msgid "(2)(7)"
@@ -1440,7 +1443,7 @@ msgstr "``s[i]``"
 
 #: ../../library/stdtypes.rst:975
 msgid "*i*\\ th item of *s*, origin 0"
-msgstr ""
+msgstr "*s* 的第 *i* 項，原始為 0"
 
 #: ../../library/stdtypes.rst:977
 msgid "``s[i:j]``"
@@ -1448,7 +1451,7 @@ msgstr "``s[i:j]``"
 
 #: ../../library/stdtypes.rst:977
 msgid "slice of *s* from *i* to *j*"
-msgstr ""
+msgstr "*s* 中從 *i* 到 *j* 的片段"
 
 #: ../../library/stdtypes.rst:977
 msgid "(3)(4)"
@@ -1460,7 +1463,7 @@ msgstr "``s[i:j:k]``"
 
 #: ../../library/stdtypes.rst:979
 msgid "slice of *s* from *i* to *j* with step *k*"
-msgstr ""
+msgstr "*s* 中從 *i* 到 *j* 的片段，步長為 *k*"
 
 #: ../../library/stdtypes.rst:979
 msgid "(3)(5)"
@@ -1472,7 +1475,7 @@ msgstr "``len(s)``"
 
 #: ../../library/stdtypes.rst:982
 msgid "length of *s*"
-msgstr ""
+msgstr "*s* 的長度"
 
 #: ../../library/stdtypes.rst:984
 msgid "``min(s)``"
@@ -1480,7 +1483,7 @@ msgstr "``min(s)``"
 
 #: ../../library/stdtypes.rst:984
 msgid "smallest item of *s*"
-msgstr ""
+msgstr "*s* 的最小項"
 
 #: ../../library/stdtypes.rst:986
 msgid "``max(s)``"
@@ -1488,7 +1491,7 @@ msgstr "``max(s)``"
 
 #: ../../library/stdtypes.rst:986
 msgid "largest item of *s*"
-msgstr ""
+msgstr "*s* 的最大項"
 
 #: ../../library/stdtypes.rst:988
 msgid "``s.index(x[, i[, j]])``"
@@ -1499,6 +1502,7 @@ msgid ""
 "index of the first occurrence of *x* in *s* (at or after index *i* and "
 "before index *j*)"
 msgstr ""
+"*s* 中 *x* 第一次出現的位置（在 *i* 索引之後且在 *j* 索引之前）"
 
 #: ../../library/stdtypes.rst:988 ../../library/stdtypes.rst:3642
 msgid "\\(8)"
@@ -1510,7 +1514,7 @@ msgstr "``s.count(x)``"
 
 #: ../../library/stdtypes.rst:992
 msgid "total number of occurrences of *x* in *s*"
-msgstr ""
+msgstr "*s* 中 *x* 出現的總次數"
 
 #: ../../library/stdtypes.rst:996
 msgid ""
@@ -1520,6 +1524,9 @@ msgid ""
 "and the two sequences must be of the same type and have the same length.  "
 "(For full details see :ref:`comparisons` in the language reference.)"
 msgstr ""
+"相同型別的序列也支援比較。特別是，元組和串列是按照字典順序對相櫻的元素進行比較的"
+"這意味著若要進行相等比較，每個元素都必須進行相等比較，並且兩個序列必須是相同型別"
+"且具有相同長度。（詳細資訊請參見語言引文中的 :ref:`comparisons`。）"
 
 #: ../../library/stdtypes.rst:1006
 msgid ""
@@ -1529,6 +1536,10 @@ msgid ""
 "`IndexError` or a :exc:`StopIteration` is encountered (or when the index "
 "drops below zero)."
 msgstr ""
+"對於可變序列的正向和反向疊代器可使用索引來訪問值。"
+"假如底層序列被改變，該索引仍可繼續向前（或向後）移動。"
+"疊代器只有遇到 :exc:`IndexError` 或"
+":exc:`StopIteration`（或索引低於零）時，才會終止。"
 
 #: ../../library/stdtypes.rst:1015
 msgid ""
@@ -1537,6 +1548,10 @@ msgid ""
 "as :class:`str`, :class:`bytes` and :class:`bytearray`) also use them for "
 "subsequence testing::"
 msgstr ""
+"當 ``in`` 和 ``not in`` 運算在一般情況"
+"下僅被用於簡單遏止測試，但當一些特殊序列（如 "
+":class:`str`、:class:`bytes` 和 "
+":class:`bytearray`）也將他們用於子序列測試：::"
 
 #: ../../library/stdtypes.rst:1024
 msgid ""
@@ -1545,6 +1560,9 @@ msgid ""
 "not copied; they are referenced multiple times.  This often haunts new "
 "Python programmers; consider::"
 msgstr ""
+"小於 ``0`` 的 *n* 值被視為 ``0``（這將產生一個與 *s* 相同型別的空序列）。"
+"注意，在序列 *s* 中的項目並未被複製；它們被多次引用。這經常困擾新的 Python 程式"
+"設計者；考慮：::"
 
 #: ../../library/stdtypes.rst:1036
 msgid ""
@@ -1553,12 +1571,20 @@ msgid ""
 "empty list.  Modifying any of the elements of ``lists`` modifies this single "
 "list. You can create a list of different lists this way::"
 msgstr ""
+"此處發生的情況是 ``[[]]`` 是一個包含空串列的單元素串列，因此 ``[[]] * 3`` 的所有三個"
+"元素都是對這個單一空串列的引用。修改 ``lists`` 的任何元素都會修改這個單一串列。"
+"你可以這樣創建不同串列的串列：："
+
+msgid "Most of the functions defined in this module call platform C "
+"library functions with the same name."
+msgstr " 這個模組中定義的大多數函式都使用相同名稱的平台 C 函式庫函式。"
 
 #: ../../library/stdtypes.rst:1048
 msgid ""
 "Further explanation is available in the FAQ entry :ref:`faq-multidimensional-"
 "list`."
 msgstr ""
+"進一步的解釋可以在 FAQ 項目 :ref:`faq-multidimensional-list` 中找到。"
 
 #: ../../library/stdtypes.rst:1052
 msgid ""
@@ -1566,6 +1592,9 @@ msgid ""
 "``len(s) + i`` or ``len(s) + j`` is substituted.  But note that ``-0`` is "
 "still ``0``."
 msgstr ""
+"如果 *i* 或 *j* 是負數，則其索引是相對於序列 *s* "
+"的結尾：``len(s) + i`` 或 ``len(s) + j`` "
+"被替換。但請注意 ``-0`` 仍然是 ``0``。"
 
 #: ../../library/stdtypes.rst:1057
 msgid ""
