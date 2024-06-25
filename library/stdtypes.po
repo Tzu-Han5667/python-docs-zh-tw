@@ -1604,6 +1604,10 @@ msgid ""
 "*j* is omitted or ``None``, use ``len(s)``.  If *i* is greater than or equal "
 "to *j*, the slice is empty."
 msgstr ""
+"在 *s* 中從 *i* 到 *j* 的片段被定義為具有索引 *k* 的項目序列，使得 ``i <= k < j``。"
+"如果 *i* 或 *j* 大於 ``len(s)``，則使用 ``len(s)``。如果 *i* 被"
+"省略或為 ``None``，則使用 ``0``。如果 *j* 被省略或為 ``None``，"
+"則使用 ``len(s)``。如果 *i* 大於或等於 *j*，則片段為空。"
 
 #: ../../library/stdtypes.rst:1064
 msgid ""
