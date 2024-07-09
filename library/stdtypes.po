@@ -1638,6 +1638,10 @@ msgid ""
 "quadratic runtime cost in the total sequence length.  To get a linear "
 "runtime cost, you must switch to one of the alternatives below:"
 msgstr ""
+"串接不可變的序列總會導致一個新物件產生。"
+"這意味著通過重複串接來構建一個序列將導致總序列長度的"
+"二次運行時間成本。為了獲得線性的運行時間成本，"
+"您必須切換到下列的其中一個替代方案："
 
 #: ../../library/stdtypes.rst:1080
 msgid ""
@@ -1645,6 +1649,9 @@ msgid ""
 "`str.join` at the end or else write to an :class:`io.StringIO` instance and "
 "retrieve its value when complete"
 msgstr ""
+"如果串接 :class:`str` 物件，您可以建立一個串列"
+"並在最後使用 :meth:`str.join`，或者寫入一個"
+":class:`io.StringIO` 實例並在完成時檢索該值"
 
 #: ../../library/stdtypes.rst:1084
 msgid ""
@@ -1653,14 +1660,17 @@ msgid ""
 "class:`bytearray` object.  :class:`bytearray` objects are mutable and have "
 "an efficient overallocation mechanism"
 msgstr ""
+"如果串接 :class:`bytes` 物件，您可以使用類似於 :meth:`bytes.join` 或 "
+":class:`io.BytesIO`，或者您可以使用 :class:`bytearray` 物件進行就地串接。"
+":class:`bytearray` 物件是可變的並且具有一個有效的過度分配機制"
 
 #: ../../library/stdtypes.rst:1089
 msgid "if concatenating :class:`tuple` objects, extend a :class:`list` instead"
-msgstr ""
+msgstr "如果串接 :class:`tuple` 物件，則應以擴展一個 :class:`list` 物件取代之"
 
 #: ../../library/stdtypes.rst:1091
 msgid "for other types, investigate the relevant class documentation"
-msgstr ""
+msgstr "對於其他型別，請查看相關的 class 文件"
 
 #: ../../library/stdtypes.rst:1095
 msgid ""
@@ -1668,6 +1678,9 @@ msgid ""
 "that follow specific patterns, and hence don't support sequence "
 "concatenation or repetition."
 msgstr ""
+"一些序列型別（如 :class:`range`）"
+"僅支援遵循特定模式的項目序列，"
+"因此不支援序列串接或重複。"
 
 #: ../../library/stdtypes.rst:1100
 msgid ""
