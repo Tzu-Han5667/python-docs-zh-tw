@@ -1691,10 +1691,15 @@ msgid ""
 "without copying any data and with the returned index being relative to the "
 "start of the sequence rather than the start of the slice."
 msgstr ""
+"當在 *s* 中找不到 *x* 時，``index`` 將引發 :exc:`ValueError`。"
+"並非所有實作都支援傳遞額外的參數 *i* 和 *j*。"
+"這些參數允許對序列的子部分進行有效搜索。"
+"傳遞額外的參數大致相當於使用 ``s[i:j].index(x)``，"
+"只是不複製任何數據，並且返回的索引是相對於序列的開始而不是片段的開始。"
 
 #: ../../library/stdtypes.rst:1111
 msgid "Immutable Sequence Types"
-msgstr ""
+msgstr "不可變序列型別"
 
 #: ../../library/stdtypes.rst:1118
 msgid ""
@@ -1702,6 +1707,7 @@ msgid ""
 "not also implemented by mutable sequence types is support for the :func:"
 "`hash` built-in."
 msgstr ""
+"不可變序列型別通常實作的唯一操作，而可變序列型別不實作的是對 :func:`hash` 內建函式的支援。"
 
 #: ../../library/stdtypes.rst:1122
 msgid ""
