@@ -1715,16 +1715,20 @@ msgid ""
 "to be used as :class:`dict` keys and stored in :class:`set` and :class:"
 "`frozenset` instances."
 msgstr ""
+"這個支援允許不可變序列，如 :class:`tuple` 實例，"
+"被用作 :class:`dict` 鍵並儲存在 :class:`set` "
+"和 :class:`frozenset` 的實例中。"
 
 #: ../../library/stdtypes.rst:1126
 msgid ""
 "Attempting to hash an immutable sequence that contains unhashable values "
 "will result in :exc:`TypeError`."
 msgstr ""
+"嘗試對包含不可雜湊值的不可變序列進行雜湊將導致 :exc:`TypeError`。"
 
 #: ../../library/stdtypes.rst:1133
 msgid "Mutable Sequence Types"
-msgstr ""
+msgstr "可變序列型別"
 
 #: ../../library/stdtypes.rst:1140
 msgid ""
@@ -1732,6 +1736,9 @@ msgid ""
 "The :class:`collections.abc.MutableSequence` ABC is provided to make it "
 "easier to correctly implement these operations on custom sequence types."
 msgstr ""
+"下表中的運算定義在可變序列型別上。"
+"提供 :class:`collections.abc.MutableSequence` ABC "
+"使得在自定義序列型別上正確地實作這些運算更加容易。"
 
 #: ../../library/stdtypes.rst:1144
 msgid ""
