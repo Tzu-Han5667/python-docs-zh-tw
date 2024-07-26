@@ -1628,7 +1628,7 @@ msgstr ""
 " *j* 大於 ``len(s)``，則它們將被減少至 ``len(s)``。當 *k* 為"
 "負數時，如果 *i* 和 *j* 大於 ``len(s) - 1``，則它們將被減少至"
 "``len(s) - 1``。如果 *i* 或 *j* 被省略或為 ``None``，則它們變為"
-"「結尾」值（其結尾取決於 *k* 的符號）。注意，*k* 不能為零。"
+"\" end \" 值（其結尾取決於 *k* 的符號）。注意，*k* 不能為零。"
 "如果 *k* 為 ``None``，則它被視為 ``1``。"
 
 #: ../../library/stdtypes.rst:1075
@@ -1747,6 +1747,7 @@ msgid ""
 "restrictions imposed by *s* (for example, :class:`bytearray` only accepts "
 "integers that meet the value restriction ``0 <= x <= 255``)."
 msgstr ""
+"在表格中，*s*是一個可變序列型別"
 
 #: ../../library/stdtypes.rst:1168
 msgid "``s[i] = x``"
