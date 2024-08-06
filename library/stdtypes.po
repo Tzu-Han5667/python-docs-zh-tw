@@ -1696,7 +1696,7 @@ msgstr ""
 "並非所有實作都支援傳遞額外的參數 *i* 和 *j*。"
 "這些參數允許對序列的子部分進行有效搜索。"
 "傳遞額外的參數大致相當於使用 ``s[i:j].index(x)``，"
-"只是不複製任何數據，並且返回的索引是相對於序列的開始而不是片段的開始。"
+"只是不複製任何數據，並且回傳的索引是相對於序列的開始而不是片段的開始。"
 
 #: ../../library/stdtypes.rst:1111
 msgid "Immutable Sequence Types"
@@ -1818,7 +1818,7 @@ msgstr "``s.copy()``"
 
 #: ../../library/stdtypes.rst:1190
 msgid "creates a shallow copy of *s* (same as ``s[:]``)"
-msgstr ""
+msgstr "創建 *s* 的淺層複製（與 ``s[:]`` 相同）"
 
 #: ../../library/stdtypes.rst:1193
 msgid "``s.extend(t)`` or ``s += t``"
@@ -1828,7 +1828,7 @@ msgstr "``s.extend(t)`` 或 ``s += t``"
 msgid ""
 "extends *s* with the contents of *t* (for the most part the same as "
 "``s[len(s):len(s)] = t``)"
-msgstr ""
+msgstr "用 *t* 的內容擴展 *s* （大部分與 ``s[len(s):len(s)] = t`` 相同）"
 
 #: ../../library/stdtypes.rst:1198
 msgid "``s *= n``"
@@ -1836,7 +1836,7 @@ msgstr "``s *= n``"
 
 #: ../../library/stdtypes.rst:1198
 msgid "updates *s* with its contents repeated *n* times"
-msgstr ""
+msgstr "將 *s* 的內容重複更新 *n* 次"
 
 #: ../../library/stdtypes.rst:1201
 msgid "``s.insert(i, x)``"
@@ -1846,6 +1846,7 @@ msgstr "``s.insert(i, x)``"
 msgid ""
 "inserts *x* into *s* at the index given by *i* (same as ``s[i:i] = [x]``)"
 msgstr ""
+"在 *s* 中的索引 *i* 處插入 *x*（與 ``s[i:i] = [x]`` 相同）"
 
 #: ../../library/stdtypes.rst:1205
 msgid "``s.pop()`` or ``s.pop(i)``"
@@ -1853,7 +1854,7 @@ msgstr "``s.pop()`` 或 ``s.pop(i)``"
 
 #: ../../library/stdtypes.rst:1205
 msgid "retrieves the item at *i* and also removes it from *s*"
-msgstr ""
+msgstr "檢索 *i* 處的項目並從 *s* 中移除它"
 
 #: ../../library/stdtypes.rst:1208
 msgid "``s.remove(x)``"
@@ -1861,7 +1862,7 @@ msgstr "``s.remove(x)``"
 
 #: ../../library/stdtypes.rst:1208
 msgid "remove the first item from *s* where ``s[i]`` is equal to *x*"
-msgstr ""
+msgstr "從 *s* 中移除第一個滿足 ``s[i]`` 等於 *x* 的項目"
 
 #: ../../library/stdtypes.rst:1211
 msgid "``s.reverse()``"
@@ -1869,21 +1870,22 @@ msgstr "``s.reverse()``"
 
 #: ../../library/stdtypes.rst:1211
 msgid "reverses the items of *s* in place"
-msgstr ""
+msgstr "按序反轉 *s* 的項目"
 
 #: ../../library/stdtypes.rst:1219
 msgid "*t* must have the same length as the slice it is replacing."
-msgstr ""
+msgstr "*t* 必須與它所取代的片段具有相同的長度。"
 
 #: ../../library/stdtypes.rst:1222
 msgid ""
 "The optional argument *i* defaults to ``-1``, so that by default the last "
 "item is removed and returned."
 msgstr ""
+"可選參數 *i* 預設為 ``-1``，因此預設情況下將移除並回傳最後一個項目。"
 
 #: ../../library/stdtypes.rst:1226
 msgid ":meth:`remove` raises :exc:`ValueError` when *x* is not found in *s*."
-msgstr ""
+msgstr ":meth:`remove` 在 *s* 中找不到 *x* 時引發 :exc:`ValueError`。"
 
 #: ../../library/stdtypes.rst:1229
 msgid ""
@@ -1891,6 +1893,8 @@ msgid ""
 "space when reversing a large sequence.  To remind users that it operates by "
 "side effect, it does not return the reversed sequence."
 msgstr ""
+":meth:`reverse` 方法在反轉大序列時按序修改序列以節省空間。"
+"為了提醒用戶它是通過副作用運行的，它不會回傳反轉的序列。"
 
 #: ../../library/stdtypes.rst:1234
 msgid ""
@@ -1900,10 +1904,14 @@ msgid ""
 "`collections.abc.MutableSequence` ABC, but most concrete mutable sequence "
 "classes provide it."
 msgstr ""
+":meth:`clear` 和 :meth:`!copy` 包含在這裡是為了與不支援"
+"切片操作的可變容器（像是 :class:`dict` 和 :class:`set`）的接口保持一致。"
+":meth:`!copy` 不是 :class:`collections.abc.MutableSequence` "
+"ABC 的一部分，但大多數具體的可變序列類別會提供它。"
 
 #: ../../library/stdtypes.rst:1240
 msgid ":meth:`clear` and :meth:`!copy` methods."
-msgstr ""
+msgstr ":meth:`clear` 和 :meth:`!copy` 方法。"
 
 #: ../../library/stdtypes.rst:1244
 msgid ""
@@ -1912,6 +1920,10 @@ msgid ""
 "the sequence are not copied; they are referenced multiple times, as "
 "explained for ``s * n`` under :ref:`typesseq-common`."
 msgstr ""
+"值 *n* 是一個整數，或實作 :meth:`~object.__index__` 的物件。"
+"零和負值的 *n* 將清除序列。序列中的項目不會被複製；"
+"它們將被多次引用，就如同在 :ref:`typesseq-common` 中"
+"對 ``s * n`` 所解釋的那樣。"
 
 #: ../../library/stdtypes.rst:1253
 msgid "Lists"
@@ -1923,27 +1935,30 @@ msgid ""
 "homogeneous items (where the precise degree of similarity will vary by "
 "application)."
 msgstr ""
+"List（串列）是可變序列，通常用於存儲同類項目的集合（其相似程度將根據應用程序而變化）。"
+# 0807
 
 #: ../../library/stdtypes.rst:1263
 msgid "Lists may be constructed in several ways:"
-msgstr ""
+msgstr "List（串列）可以通過幾種方式構建："
 
 #: ../../library/stdtypes.rst:1265
 msgid "Using a pair of square brackets to denote the empty list: ``[]``"
-msgstr ""
+msgstr "使用一對方括號來表示空串列：``[]``"
 
 #: ../../library/stdtypes.rst:1266
 msgid ""
 "Using square brackets, separating items with commas: ``[a]``, ``[a, b, c]``"
 msgstr ""
+"使用方括號，用逗號分隔項目：``[a]``、``[a, b, c]``"
 
 #: ../../library/stdtypes.rst:1267
 msgid "Using a list comprehension: ``[x for x in iterable]``"
-msgstr ""
+msgstr "使用串列推導式：``[x for x in iterable]``"
 
 #: ../../library/stdtypes.rst:1268
 msgid "Using the type constructor: ``list()`` or ``list(iterable)``"
-msgstr ""
+msgstr "使用型別構造函式：``list()`` 或 ``list(iterable)``"
 
 #: ../../library/stdtypes.rst:1270
 msgid ""
@@ -1955,12 +1970,18 @@ msgid ""
 "returns ``[1, 2, 3]``. If no argument is given, the constructor creates a "
 "new empty list, ``[]``."
 msgstr ""
+"構造函式構建一個與 *iterable* 的項目相同且順序相同的串列。"
+"*iterable* 可以是序列、支持疊代的容器或疊代器物件。"
+"如果 *iterable* 已經是一個串列，則會進行複製並返回，類似於 ``iterable[:]``。"
+"例如，``list('abc')`` 返回 ``['a', 'b', 'c']``，而 ``list( (1, 2, 3) )`` 返回 ``[1, 2, 3]``。"
+"如果沒有給定參數，則構造函式創建一個新的空串列，``[]``。"
 
 #: ../../library/stdtypes.rst:1279
 msgid ""
 "Many other operations also produce lists, including the :func:`sorted` built-"
 "in."
 msgstr ""
+"許多其他操作也會產生串列，包括內建函式 :func:`sorted`。"
 
 #: ../../library/stdtypes.rst:1282
 msgid ""
@@ -1968,6 +1989,9 @@ msgid ""
 "<typesseq-mutable>` sequence operations. Lists also provide the following "
 "additional method:"
 msgstr ""
+"List（串列）實作了所有 :ref:`common <typesseq-common>`"
+"和 :ref:`mutable <typesseq-mutable>` "
+"序列操作。List（串列）還提供了以下附加方法："
 
 #: ../../library/stdtypes.rst:1288
 msgid ""
@@ -1976,12 +2000,17 @@ msgid ""
 "the entire sort operation will fail (and the list will likely be left in a "
 "partially modified state)."
 msgstr ""
+"此方法按地方排序串列，僅使用項目之間的 ``<`` 比較。"
+"異常不會被抑制 - 如果任何比較操作失敗，整個排序操作將失敗"
+"（並且串列可能會被留在部分修改的狀態）。"
 
 #: ../../library/stdtypes.rst:1293
 msgid ""
 ":meth:`sort` accepts two arguments that can only be passed by keyword (:ref:"
 "`keyword-only arguments <keyword-only_parameter>`):"
 msgstr ""
+":meth:`sort` 接受兩個只能通過關鍵字傳遞的參數（:ref:"
+"`keyword-only arguments <keyword-only_parameter>`）："
 
 #: ../../library/stdtypes.rst:1296
 msgid ""
@@ -1991,18 +2020,23 @@ msgid ""
 "for the entire sorting process. The default value of ``None`` means that "
 "list items are sorted directly without calculating a separate key value."
 msgstr ""
+"*key* 指定一個參數的函式，用於從每個串列元素中提取比較鍵（例如，``key=str.lower``）。"
+"列表中每個項目對應的鍵只計算一次，然後用於整個排序過程。"
+"默認值 ``None`` 表示直接對串列項目進行排序，而不計算單獨的鍵值。"
 
 #: ../../library/stdtypes.rst:1303
 msgid ""
 "The :func:`functools.cmp_to_key` utility is available to convert a 2.x style "
 "*cmp* function to a *key* function."
 msgstr ""
+":func:`functools.cmp_to_key` 實用工具可用於將 2.x 風格的 *cmp* 函式轉換為 *key* 函式。"
 
 #: ../../library/stdtypes.rst:1306
 msgid ""
 "*reverse* is a boolean value.  If set to ``True``, then the list elements "
 "are sorted as if each comparison were reversed."
 msgstr ""
+"*reverse* 是一個布林值。如果設置為 ``True``，則串列元素將按照每個比較被反轉的方式進行排序。"
 
 #: ../../library/stdtypes.rst:1309
 msgid ""
@@ -2011,6 +2045,9 @@ msgid ""
 "not return the sorted sequence (use :func:`sorted` to explicitly request a "
 "new sorted list instance)."
 msgstr ""
+"此方法在排序大序列時按地方修改序列以節省空間。"
+"為了提醒用戶它是通過副作用運行的，它不會回傳排序的序列（使用 :func:`sorted` "
+"來明確要求一個新的排序後的串列實例）。"
 
 #: ../../library/stdtypes.rst:1314
 msgid ""
@@ -2019,11 +2056,14 @@ msgid ""
 "--- this is helpful for sorting in multiple passes (for example, sort by "
 "department, then by salary grade)."
 msgstr ""
+":meth:`sort` 方法保證是穩定的。如果排序保證不會改變比較相等的元素的相對順序，"
+"則排序是穩定的 --- 這對於多次排序很有幫助（例如，按部門排序，然後按薪資等級排序）。"
 
 #: ../../library/stdtypes.rst:1319
 msgid ""
 "For sorting examples and a brief sorting tutorial, see :ref:`sortinghowto`."
 msgstr ""
+"有關排序示例和簡短的排序教程，請參見 :ref:`sortinghowto`。"
 
 #: ../../library/stdtypes.rst:1323
 msgid ""
@@ -2032,10 +2072,12 @@ msgid ""
 "list appear empty for the duration, and raises :exc:`ValueError` if it can "
 "detect that the list has been mutated during a sort."
 msgstr ""
+"在排序串列時，嘗試變更或甚至檢查串列的效果是未定義的。"
+"Python 的 C 實現使串列在此期間顯示為空，並且在排序期間檢測到串列已被變更時引發 :exc:`ValueError`。"
 
 #: ../../library/stdtypes.rst:1332
 msgid "Tuples"
-msgstr ""
+msgstr "Tuple（元組）"
 
 #: ../../library/stdtypes.rst:1336
 msgid ""
@@ -2045,26 +2087,28 @@ msgid ""
 "homogeneous data is needed (such as allowing storage in a :class:`set` or :"
 "class:`dict` instance)."
 msgstr ""
+"Tuple（元組）是不可變序列，通常用於存儲異類數據的集合（例如 :func:`enumerate` 內建函式生成的 2-tuple（二元組））。"
+"Tuple（元組）也用於需要不可變的同類數據序列的情況（例如允許存儲在 :class:`set` 或 :class:`dict` 實例中）。"
 
 #: ../../library/stdtypes.rst:1344
 msgid "Tuples may be constructed in a number of ways:"
-msgstr ""
+msgstr "Tuple（元組）可以通過多種方式構建："
 
 #: ../../library/stdtypes.rst:1346
 msgid "Using a pair of parentheses to denote the empty tuple: ``()``"
-msgstr ""
+msgstr "使用一對括號來表示空 tuple（元組）：``()``"
 
 #: ../../library/stdtypes.rst:1347
 msgid "Using a trailing comma for a singleton tuple: ``a,`` or ``(a,)``"
-msgstr ""
+msgstr "使用尾逗號來表示單元素 tuple（元組）：``a,`` 或 ``(a,)``"
 
 #: ../../library/stdtypes.rst:1348
 msgid "Separating items with commas: ``a, b, c`` or ``(a, b, c)``"
-msgstr ""
+msgstr "用逗號分隔項目：``a, b, c`` 或 ``(a, b, c)``"
 
 #: ../../library/stdtypes.rst:1349
 msgid "Using the :func:`tuple` built-in: ``tuple()`` or ``tuple(iterable)``"
-msgstr ""
+msgstr "使用內建函式 :func:`tuple`：``tuple()`` 或 ``tuple(iterable)``"
 
 #: ../../library/stdtypes.rst:1351
 msgid ""
@@ -2076,6 +2120,12 @@ msgid ""
 "3)``. If no argument is given, the constructor creates a new empty tuple, "
 "``()``."
 msgstr ""
+"構造函式構建一個與 *iterable* 的項目相同且順序相同的 tuple（元組）。"
+"*iterable* 可以是序列、支持疊代的容器或疊代器物件。"
+"如果 *iterable* 已經是一個 tuple（元組），則不變地返回。"
+"例如，``tuple('abc')`` 返回 ``('a', 'b', 'c')``，"
+"而 ``tuple( [1, 2, 3] )`` 返回 ``(1, 2, 3)``。"
+"如果沒有給定參數，則構造函式創建一個新的空 tuple（元組），``()``。"
 
 #: ../../library/stdtypes.rst:1359
 msgid ""
@@ -2085,12 +2135,17 @@ msgid ""
 "function call with three arguments, while ``f((a, b, c))`` is a function "
 "call with a 3-tuple as the sole argument."
 msgstr ""
+"注意，實際上是逗號使一個 tuple（元組），而不是括號。"
+"括號是可選的，除了空 tuple（元組）的情況，或者當它們需要避免語法歧義時。"
+"例如，``f(a, b, c)`` 是一個帶有三個參數的函式調用，而 ``f((a, b, c))``"
+"是一個帶有一個 3-tuple（三元組）作為唯一參數的函式調用。"
 
 #: ../../library/stdtypes.rst:1365
 msgid ""
 "Tuples implement all of the :ref:`common <typesseq-common>` sequence "
 "operations."
 msgstr ""
+"Tuple（元組）實作了所有 :ref:`common <typesseq-common>` 序列操作。"
 
 #: ../../library/stdtypes.rst:1368
 msgid ""
@@ -2098,16 +2153,19 @@ msgid ""
 "access by index, :func:`collections.namedtuple` may be a more appropriate "
 "choice than a simple tuple object."
 msgstr ""
+"對於數據的異類集合，通過名稱訪問比通過索引訪問更清晰，"
+":func:`collections.namedtuple` 可能比簡單的 tuple 物件更適合。"
 
 #: ../../library/stdtypes.rst:1376
 msgid "Ranges"
-msgstr ""
+msgstr "Range（範圍）"
 
 #: ../../library/stdtypes.rst:1380
 msgid ""
 "The :class:`range` type represents an immutable sequence of numbers and is "
 "commonly used for looping a specific number of times in :keyword:`for` loops."
 msgstr ""
+":class:`range` 型別表示一個不可變的數字序列，通常用於在 :keyword:`for` 循環中特定次數的迴圈。"
 
 #: ../../library/stdtypes.rst:1387
 msgid ""
@@ -2117,12 +2175,17 @@ msgid ""
 "If the *start* argument is omitted, it defaults to ``0``. If *step* is "
 "zero, :exc:`ValueError` is raised."
 msgstr ""
+"範圍構造函式的參數必須是整數（內建 :class:`int` 或任何實作 :meth:`~object.__index__` "
+"特殊方法的物件）。如果省略 *step* 參數，則默認為 ``1``。如果省略 *start* 參數，則默認為 ``0``。"
+"如果 *step* 為零，則引發 :exc:`ValueError`。"
 
 #: ../../library/stdtypes.rst:1393
 msgid ""
 "For a positive *step*, the contents of a range ``r`` are determined by the "
 "formula ``r[i] = start + step*i`` where ``i >= 0`` and ``r[i] < stop``."
 msgstr ""
+"對於正 *step*，範圍 ``r`` 的內容由公式 ``r[i] = start + step*i`` 確定，"
+"其中 ``i >= 0`` 和 ``r[i] < stop``。"
 
 #: ../../library/stdtypes.rst:1397
 msgid ""
@@ -2130,6 +2193,8 @@ msgid ""
 "formula ``r[i] = start + step*i``, but the constraints are ``i >= 0`` and "
 "``r[i] > stop``."
 msgstr ""
+"對於負 *step*，範圍的內容仍然由公式 ``r[i] = start + step*i`` 確定，"
+"但約束條件是 ``i >= 0`` 和 ``r[i] > stop``。"
 
 #: ../../library/stdtypes.rst:1401
 msgid ""
@@ -2137,6 +2202,8 @@ msgid ""
 "Ranges do support negative indices, but these are interpreted as indexing "
 "from the end of the sequence determined by the positive indices."
 msgstr ""
+"如果 ``r[0]`` 不符合值限制，則範圍對象將為空。"
+"範圍支持負索引，但這些被解釋為從正索引確定的序列的末尾進行索引。"
 
 #: ../../library/stdtypes.rst:1406
 msgid ""
@@ -2144,10 +2211,12 @@ msgid ""
 "permitted but some features (such as :func:`len`) may raise :exc:"
 "`OverflowError`."
 msgstr ""
+"允許包含大於 :data:`sys.maxsize` 的絕對值的範圍，"
+"但某些功能（如 :func:`len`）可能會引發 :exc:`OverflowError`。"
 
 #: ../../library/stdtypes.rst:1410
 msgid "Range examples::"
-msgstr ""
+msgstr "Range（範圍）示例："
 
 #: ../../library/stdtypes.rst:1427
 msgid ""
@@ -2156,22 +2225,27 @@ msgid ""
 "objects can only represent sequences that follow a strict pattern and "
 "repetition and concatenation will usually violate that pattern)."
 msgstr ""
+"範圍實現了所有 :ref:`common <typesseq-common>` 序列操作，"
+"除了連接和重複（因為範圍對象只能表示遵循嚴格模式的序列，"
+"重複和連接通常會違反該模式）。"
 
 #: ../../library/stdtypes.rst:1434
 msgid ""
 "The value of the *start* parameter (or ``0`` if the parameter was not "
 "supplied)"
 msgstr ""
+"*start* 參數的值（如果未提供參數，則為 ``0``）"
 
 #: ../../library/stdtypes.rst:1439
 msgid "The value of the *stop* parameter"
-msgstr ""
+msgstr "*stop* 參數的值"
 
 #: ../../library/stdtypes.rst:1443
 msgid ""
 "The value of the *step* parameter (or ``1`` if the parameter was not "
 "supplied)"
 msgstr ""
+"參數 *step* 的值（如果未提供參數，則為 ``1``）"
 
 #: ../../library/stdtypes.rst:1446
 msgid ""
@@ -2181,6 +2255,10 @@ msgid ""
 "it only stores the ``start``, ``stop`` and ``step`` values, calculating "
 "individual items and subranges as needed)."
 msgstr ""
+"與常規 :class:`list` 或 :class:`tuple` 相比，"
+":class:`range` 類型的優勢在於 :class:`range` 對象始終將佔用相同（較小）的內存，"
+"無論它所表示的範圍的大小如何（因為它僅存儲 ``start``、``stop`` 和 ``step`` 值，"
+"根據需要計算單個項目和子範圍）。"
 
 #: ../../library/stdtypes.rst:1452
 msgid ""
@@ -2188,6 +2266,8 @@ msgid ""
 "provide features such as containment tests, element index lookup, slicing "
 "and support for negative indices (see :ref:`typesseq`):"
 msgstr ""
+"範圍對象實現了 :class:`collections.abc.Sequence` ABC，"
+"並提供了包含測試、元素索引查找、切片和支持負索引等功能（參見 :ref:`typesseq`）："
 
 #: ../../library/stdtypes.rst:1472
 msgid ""
@@ -2198,6 +2278,11 @@ msgid ""
 "and :attr:`~range.step` attributes, for example ``range(0) == range(2, 1, "
 "3)`` or ``range(0, 3, 2) == range(0, 4, 2)``.)"
 msgstr ""
+"使用 ``==`` 和 ``!=`` 測試範圍對象的相等性將它們作為序列進行比較。"
+"也就是說，如果兩個範圍對象表示相同的值序列，則它們被認為是相等的。"
+"（注意，比較相等的兩個範圍對象可能具有不同的 :attr:`~range.start`、"
+":attr:`~range.stop` 和 :attr:`~range.step` 屬性，例如 ``range(0) == range(2, 1, 3)`` "
+"或 ``range(0, 3, 2) == range(0, 4, 2)``。）"
 
 #: ../../library/stdtypes.rst:1479
 msgid ""
@@ -2205,18 +2290,22 @@ msgid ""
 "class:`int` objects for membership in constant time instead of iterating "
 "through all items."
 msgstr ""
+"實現 Sequence ABC。支持切片和負索引。"
+"測試 :class:`int` 物件的成員資格需要常數時間，而不是遍歷所有項目。"
 
 #: ../../library/stdtypes.rst:1485
 msgid ""
 "Define '==' and '!=' to compare range objects based on the sequence of "
 "values they define (instead of comparing based on object identity)."
 msgstr ""
+"定義 '==' 和 '!=' 來比較範圍對象基於它們定義的值序列（而不是基於對象身份比較）。"
 
 #: ../../library/stdtypes.rst:1490
 msgid ""
 "The :attr:`~range.start`, :attr:`~range.stop` and :attr:`~range.step` "
 "attributes."
 msgstr ""
+":attr:`~range.start`、:attr:`~range.stop` 和 :attr:`~range.step` 屬性。"
 
 #: ../../library/stdtypes.rst:1496
 msgid ""
@@ -2224,6 +2313,8 @@ msgid ""
 "how to implement a lazy version of range suitable for floating point "
 "applications."
 msgstr ""
+"`linspace recipe <https://code.activestate.com/recipes/579000/>`_"
+"展示了如何實現適用於浮點應用程序的範圍的惰性版本。"
 
 #: ../../library/stdtypes.rst:1508
 msgid "Text Sequence Type --- :class:`str`"
