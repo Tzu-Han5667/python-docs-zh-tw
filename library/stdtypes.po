@@ -1927,7 +1927,7 @@ msgstr ""
 
 #: ../../library/stdtypes.rst:1253
 msgid "Lists"
-msgstr "List（串列）"
+msgstr "Lists（串列）"
 
 #: ../../library/stdtypes.rst:1257
 msgid ""
@@ -1935,12 +1935,11 @@ msgid ""
 "homogeneous items (where the precise degree of similarity will vary by "
 "application)."
 msgstr ""
-"List（串列）是可變序列，通常用於存儲同類項目的集合（其相似程度將根據應用程序而變化）。"
-# 0807
+"串列是可變序列，通常用於儲存同類項目的集合（其相似程度將根據應用而變化）。"
 
 #: ../../library/stdtypes.rst:1263
 msgid "Lists may be constructed in several ways:"
-msgstr "List（串列）可以通過幾種方式構建："
+msgstr "串列可以通過幾種方式建構："
 
 #: ../../library/stdtypes.rst:1265
 msgid "Using a pair of square brackets to denote the empty list: ``[]``"
@@ -1954,7 +1953,7 @@ msgstr ""
 
 #: ../../library/stdtypes.rst:1267
 msgid "Using a list comprehension: ``[x for x in iterable]``"
-msgstr "使用串列推導式：``[x for x in iterable]``"
+msgstr "使用串列綜合運算：``[x for x in iterable]``"
 
 #: ../../library/stdtypes.rst:1268
 msgid "Using the type constructor: ``list()`` or ``list(iterable)``"
@@ -1970,11 +1969,11 @@ msgid ""
 "returns ``[1, 2, 3]``. If no argument is given, the constructor creates a "
 "new empty list, ``[]``."
 msgstr ""
-"構造函式構建一個與 *iterable* 的項目相同且順序相同的串列。"
-"*iterable* 可以是序列、支持疊代的容器或疊代器物件。"
-"如果 *iterable* 已經是一個串列，則會進行複製並返回，類似於 ``iterable[:]``。"
-"例如，``list('abc')`` 返回 ``['a', 'b', 'c']``，而 ``list( (1, 2, 3) )`` 返回 ``[1, 2, 3]``。"
-"如果沒有給定參數，則構造函式創建一個新的空串列，``[]``。"
+"構造函式建立一個與 *iterable* 的項目相同且順序相同的串列。"
+"*iterable* 可以是序列、支援疊代的容器或疊代器物件。"
+"如果 *iterable* 已經是一個串列，則會進行複製並回傳，類似於 ``iterable[:]``。"
+"例如，``list('abc')`` 回傳 ``['a', 'b', 'c']``，而 ``list( (1, 2, 3) )`` "
+"回傳 ``[1, 2, 3]``。如果沒有給定參數，則構造函式創一個新的空串列，``[]``。"
 
 #: ../../library/stdtypes.rst:1279
 msgid ""
@@ -1989,9 +1988,9 @@ msgid ""
 "<typesseq-mutable>` sequence operations. Lists also provide the following "
 "additional method:"
 msgstr ""
-"List（串列）實作了所有 :ref:`common <typesseq-common>`"
+"串列實作了所有 :ref:`common <typesseq-common>`"
 "和 :ref:`mutable <typesseq-mutable>` "
-"序列操作。List（串列）還提供了以下附加方法："
+"序列操作。串列還提供了以下附加方法："
 
 #: ../../library/stdtypes.rst:1288
 msgid ""
@@ -2000,16 +1999,16 @@ msgid ""
 "the entire sort operation will fail (and the list will likely be left in a "
 "partially modified state)."
 msgstr ""
-"此方法按地方排序串列，僅使用項目之間的 ``<`` 比較。"
-"異常不會被抑制 - 如果任何比較操作失敗，整個排序操作將失敗"
-"（並且串列可能會被留在部分修改的狀態）。"
+"此方法按位置排序串列，僅使用 ``<`` 在項目之間比較。"
+"例外不會被抑制 - 如果任何比較操作失敗，整個排序操作"
+"將失敗（並且串列可能會被留在部分修改的狀態）。"
 
 #: ../../library/stdtypes.rst:1293
 msgid ""
 ":meth:`sort` accepts two arguments that can only be passed by keyword (:ref:"
 "`keyword-only arguments <keyword-only_parameter>`):"
 msgstr ""
-":meth:`sort` 接受兩個只能通過關鍵字傳遞的參數（:ref:"
+":meth:`sort` 接受兩個只能藉由一個關鍵字傳遞的參數（:ref:"
 "`keyword-only arguments <keyword-only_parameter>`）："
 
 #: ../../library/stdtypes.rst:1296
@@ -2020,9 +2019,9 @@ msgid ""
 "for the entire sorting process. The default value of ``None`` means that "
 "list items are sorted directly without calculating a separate key value."
 msgstr ""
-"*key* 指定一個參數的函式，用於從每個串列元素中提取比較鍵（例如，``key=str.lower``）。"
-"列表中每個項目對應的鍵只計算一次，然後用於整個排序過程。"
-"默認值 ``None`` 表示直接對串列項目進行排序，而不計算單獨的鍵值。"
+"*key* 指定一個參數的函式，它用於從每個串列元素中提取比較鍵（例如，``key=str.lower``）。"
+"串列中每個項目對應的鍵只被計算一次，然後用於整個排序過程。"
+"默認值 ``None`` 表示在未經計算單獨的鍵值情況下，直接對串列項目進行排序。"
 
 #: ../../library/stdtypes.rst:1303
 msgid ""
