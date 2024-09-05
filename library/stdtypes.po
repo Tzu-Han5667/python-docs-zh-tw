@@ -2071,7 +2071,7 @@ msgid ""
 "list appear empty for the duration, and raises :exc:`ValueError` if it can "
 "detect that the list has been mutated during a sort."
 msgstr ""
-"在排序一個串列時，嘗試變更或甚至檢查串列的效果是未定義的。#0818" 
+"在排序一個串列時，嘗試變更或甚至檢查串列的效果是未定義的。#0905" 
 "Python 的 C 實現使串列在此期間顯示為空，並且在排序期間檢測到串列已被變更時引發 :exc:`ValueError`。"
 
 #: ../../library/stdtypes.rst:1332
