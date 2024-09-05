@@ -1,0 +1,42 @@
+name: Sync Branches and Rearrange Files
+
+on:
+  push:
+    branches:
+      - library/stdtypes_8
+
+jobs:
+  sync-and-rearrange:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # 確保完整地獲取 git 歷史以便合併
+
+      - name: Setup Git
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+
+      - name: Switch to weblate-test
+        run: |
+          git fetch
+          git checkout weblate-test || git checkout -b weblate-test
+
+      - name: Merge changes from library/stdtypes_8
+        run: |
+          git merge origin/library/stdtypes_8 --no-edit
+
+      - name: Create directories and move files
+        run: |
+          mkdir -p locales/zh_TW/library
+          mkdir -p locales/zh_TW/tutorial
+          mv library/*.po locales/zh_TW/library/
+          mv tutorial/*.po locales/zh_TW/tutorial/
+          git add .
+          git commit -m "Reorganize files into language-specific directories"
+
+      - name: Push changes
+        run: |
+          git push origin weblate-test
