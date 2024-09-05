@@ -1,7 +1,7 @@
 name: Sync Branches and Rearrange Files
 
 on:
-  push:
+  merge:
     branches:
       - library/stdtypes_8
 
